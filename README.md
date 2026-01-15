@@ -13,6 +13,7 @@ This benchmark helps compare retrieval performance across different text views t
   - `readme_cleaned`: Cleaned/processed README
   - `readme_and_topics`: README + repository topics
   - `readme_and_additional_context`: README + enriched context
+  - `enriched`: Full enriched view with all metadata
   - `full`: All fields combined
 
 - **Multiple Retrieval Methods**:
@@ -86,6 +87,9 @@ uv run python main.py --retrievers embedding --views readme_and_topics
 
 # Use a different embedding model
 uv run python main.py --retrievers embedding --embedding-model sentence-transformers/all-mpnet-base-v2
+
+# Use NASA Science-tuned embedding model
+uv run python main.py --retrievers embedding --embedding-model nasa-impact/nasa-smd-ibm-st-v2 --by-division
 
 # Skip visualization plots
 uv run python main.py --no-plots
@@ -162,8 +166,8 @@ code-search-experiments/
 - **Benchmark**: [nasa-impact/nasa-science-repos-sme-benchmark](https://huggingface.co/datasets/nasa-impact/nasa-science-repos-sme-benchmark)
   - 5,264 repositories (corpus) with 15 metadata columns
   - 219 queries
-  - 252 relevance judgments (qrels)
-  - Divisions: Earth Science (162 qrels), Astrophysics (61 qrels), Planetary (29 qrels)
+  - 259 relevance judgments (qrels)
+  - Divisions: Earth Science (158 qrels), Astrophysics (61 qrels), Planetary (40 qrels)
 
 - **Parent Dataset**: [nasa-impact/nasa-science-github-repos](https://huggingface.co/datasets/nasa-impact/nasa-science-github-repos)
   - 5,264 repositories with rich metadata

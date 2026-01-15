@@ -12,7 +12,8 @@ class ViewGenerator:
         'readme_cleaned',
         'readme_and_topics',
         'readme_and_additional_context',
-        'full'
+        'full',
+        'enriched'  # Matches LocalSearchTool's text creation
     ]
 
     def create_text_view(self, corpus_df: pd.DataFrame, view_name: str) -> pd.DataFrame:
@@ -46,6 +47,8 @@ class ViewGenerator:
             result['text'] = self._create_readme_and_context_view(corpus_df)
         elif view_name == 'full':
             result['text'] = self._create_full_view(corpus_df)
+        elif view_name == 'enriched':
+            result['text'] = self._create_enriched_view(corpus_df)
 
         # Remove rows with empty text
         result = result[result['text'].str.strip().str.len() > 0]
@@ -123,6 +126,56 @@ class ViewGenerator:
                 parts.append(f"### Description\n{description}")
 
             text = '\n\n'.join(parts)
+            texts.append(text)
+
+        return pd.Series(texts, index=df.index)
+
+    def _create_enriched_view(self, df: pd.DataFrame) -> pd.Series:
+        """
+        Create view that exactly matches LocalSearchTool's text creation.
+
+        Concatenates fields in this order (matching LocalSearchTool's context_columns):
+        1. description
+        2. reformulated_text (readme_cleaned)
+        3. key_topics (topics)
+        4. relevant_content (additional_context)
+
+        Fields are concatenated with spaces, no headers.
+        """
+        texts = []
+        for _, row in df.iterrows():
+            parts = []
+
+            # 1. description
+            description = row.get('description', '')
+            if pd.notna(description) and str(description).strip():
+                parts.append(str(description))
+
+            # 2. reformulated_text → readme_cleaned
+            readme_cleaned = row.get('readme_cleaned', '')
+            if pd.notna(readme_cleaned) and str(readme_cleaned).strip():
+                parts.append(str(readme_cleaned))
+
+            # 3. key_topics → topics
+            topics = row.get('topics', '')
+            try:
+                if isinstance(topics, list) and len(topics) > 0:
+                    topics_str = ' '.join(str(t) for t in topics)
+                    if topics_str.strip():
+                        parts.append(topics_str)
+                elif topics is not None and str(topics).strip() and str(topics) != 'nan':
+                    parts.append(str(topics))
+            except:
+                # Handle cases where topics might be problematic (empty arrays, etc)
+                pass
+
+            # 4. relevant_content → additional_context
+            additional_context = row.get('additional_context', '')
+            if pd.notna(additional_context) and str(additional_context).strip():
+                parts.append(str(additional_context))
+
+            # Concatenate with spaces (like LocalSearchTool does)
+            text = ' '.join(parts)
             texts.append(text)
 
         return pd.Series(texts, index=df.index)

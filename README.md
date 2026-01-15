@@ -20,8 +20,16 @@ This benchmark helps compare retrieval performance across different text views t
   - Embedding-based (dense retrieval with sentence transformers)
 
 - **Comprehensive Metrics**:
-  - Recall@K (K=1, 5, 10, 20, 50, 100)
-  - NDCG@K (K=1, 5, 10, 20, 50, 100)
+  - MRR@K (Mean Reciprocal Rank)
+  - NDCG@K (Normalized Discounted Cumulative Gain)
+  - Recall@K
+  - K values: 1, 5, 10
+
+- **Division-Specific Evaluation**:
+  - Earth Science
+  - Astrophysics
+  - Planetary
+  - Holistic (overall)
 
 ## Installation
 
@@ -33,27 +41,51 @@ uv sync
 
 ## Usage
 
-### Run Full Benchmark
+### Quick Start - BM25 Benchmark with Division Breakdown
 
-Run the complete benchmark with default settings (all views, both retrievers):
+Run BM25 on all 4 text views with division-specific evaluation:
 
 ```bash
-uv run python main.py
+uv run python main.py --by-division --views readme readme_cleaned readme_and_topics readme_and_additional_context
 ```
 
-### Custom Configuration
+This will:
+- Run BM25 retrieval (default)
+- Test all 4 text views
+- Show results for Earth Science, Astrophysics, Planetary, and Holistic divisions
+- Save to: `results/bm25_benchmark_results_by_division.csv`
 
-Run with specific views and retrievers:
+### Division-Specific Benchmark Examples
+
+```bash
+# BM25 on readme only (default)
+uv run python main.py --by-division
+
+# BM25 on all 4 views
+uv run python main.py --by-division --views readme readme_cleaned readme_and_topics readme_and_additional_context
+
+# Embedding retrieval with division breakdown
+uv run python main.py --by-division --retrievers embedding --embedding-model all-MiniLM-L6-v2 --views readme
+
+# Run both BM25 and embedding
+uv run python main.py --by-division --retrievers bm25 embedding --views readme
+```
+
+Output files:
+- BM25: `results/bm25_benchmark_results_by_division.csv`
+- Embedding: `results/embedding_{model_name}_benchmark_results_by_division.csv`
+
+### Standard Benchmark (No Division Breakdown)
 
 ```bash
 # Test only BM25 with README views
 uv run python main.py --retrievers bm25 --views readme readme_cleaned
 
-# Test only embedding retrieval with topic-enhanced views
-uv run python main.py --retrievers embedding --views readme_and_topics readme_and_additional_context
+# Test only embedding retrieval
+uv run python main.py --retrievers embedding --views readme_and_topics
 
 # Use a different embedding model
-uv run python main.py --embedding-model all-mpnet-base-v2
+uv run python main.py --retrievers embedding --embedding-model sentence-transformers/all-mpnet-base-v2
 
 # Skip visualization plots
 uv run python main.py --no-plots
@@ -65,9 +97,12 @@ uv run python main.py --output my_results.csv
 ### Available Options
 
 ```
---views [VIEW ...]              Text views to benchmark (default: all)
---retrievers [RET ...]          Retrieval methods: bm25, embedding (default: both)
+--views [VIEW ...]              Text views to benchmark (default: readme)
+                                Options: readme, readme_cleaned, readme_and_topics, readme_and_additional_context
+--retrievers [RET ...]          Retrieval methods (default: bm25)
+                                Options: bm25, embedding
 --embedding-model MODEL         Sentence transformer model (default: all-MiniLM-L6-v2)
+--by-division                   Run with division-specific evaluation (Earth, Astro, Planetary, Holistic)
 --output PATH                   Output CSV path (default: results/benchmark_results.csv)
 --no-plots                      Skip creating visualization plots
 ```
@@ -125,9 +160,10 @@ code-search-experiments/
 ## Dataset Information
 
 - **Benchmark**: [nasa-impact/nasa-science-repos-sme-benchmark](https://huggingface.co/datasets/nasa-impact/nasa-science-repos-sme-benchmark)
-  - 5,397 repositories (corpus)
-  - 215 queries
-  - 253 relevance judgments
+  - 5,264 repositories (corpus) with 15 metadata columns
+  - 219 queries
+  - 252 relevance judgments (qrels)
+  - Divisions: Earth Science (162 qrels), Astrophysics (61 qrels), Planetary (29 qrels)
 
 - **Parent Dataset**: [nasa-impact/nasa-science-github-repos](https://huggingface.co/datasets/nasa-impact/nasa-science-github-repos)
   - 5,264 repositories with rich metadata
@@ -135,23 +171,33 @@ code-search-experiments/
 
 ## Example Output
 
-```
-================================================================================
-BENCHMARK RESULTS
-================================================================================
-View                                Retriever     R@10   N@10   R@50   N@50
---------------------------------------------------------------------------------
-readme                              bm25          0.456  0.523  0.678  0.612
-readme                              embedding     0.489  0.551  0.701  0.634
-readme_cleaned                      bm25          0.489  0.551  0.701  0.634
-readme_cleaned                      embedding     0.512  0.578  0.723  0.656
-readme_and_topics                   bm25          0.512  0.578  0.723  0.656
-readme_and_topics                   embedding     0.534  0.601  0.745  0.678
-readme_and_additional_context       bm25          0.545  0.612  0.756  0.689
-readme_and_additional_context       embedding     0.567  0.634  0.778  0.711
-================================================================================
+### Division-Specific Benchmark Results
 
-Legend: R@K = Recall@K, N@K = NDCG@K
+```
+====================================================================================================
+BM25 BENCHMARK RESULTS BY DIVISION
+====================================================================================================
+
+View: readme
+----------------------------------------------------------------------------------------------------
+Division        MRR@1   NDCG@1   MRR@5   NDCG@5   MRR@10  NDCG@10
+----------------------------------------------------------------------------------------------------
+earth           0.0129  0.0129  0.0151  0.0161  0.0167  0.0202
+astro           0.2188  0.2188  0.2719  0.2251  0.2758  0.2321
+planetary       0.0909  0.0909  0.1061  0.1136  0.1176  0.1425
+holistic        0.0526  0.0526  0.0640  0.0584  0.0670  0.0655
+
+View: readme_and_additional_context
+----------------------------------------------------------------------------------------------------
+Division        MRR@1   NDCG@1   MRR@5   NDCG@5   MRR@10  NDCG@10
+----------------------------------------------------------------------------------------------------
+earth           0.0129  0.0129  0.0177  0.0198  0.0192  0.0236
+astro           0.2188  0.2188  0.2667  0.2222  0.2667  0.2251
+planetary       0.1364  0.1364  0.1606  0.1767  0.1720  0.2054
+holistic        0.0574  0.0574  0.0709  0.0673  0.0732  0.0736
+====================================================================================================
+
+Legend: MRR = Mean Reciprocal Rank, NDCG = Normalized Discounted Cumulative Gain
 ```
 
 ## Architecture

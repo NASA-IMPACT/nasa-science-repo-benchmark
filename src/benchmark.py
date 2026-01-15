@@ -172,14 +172,18 @@ def format_results_table(results_df: pd.DataFrame, k_values: List[int] = None) -
     return "\n".join(lines)
 
 
-def run_bm25_benchmark_by_division(
+def run_benchmark_by_division(
+    retriever_name: str = 'bm25',
+    embedding_model: str = 'all-MiniLM-L6-v2',
     view_names: List[str] = None,
     k_values: List[int] = None
 ) -> pd.DataFrame:
     """
-    Run BM25 benchmark with division-specific evaluation.
+    Run benchmark with division-specific evaluation for any retriever.
 
     Args:
+        retriever_name: Name of retriever to use ('bm25' or 'embedding')
+        embedding_model: Model name for embedding retriever (only used if retriever_name='embedding')
         view_names: List of view names to test
         k_values: K values for metrics evaluation (default: [1, 5, 10])
 
@@ -199,8 +203,10 @@ def run_bm25_benchmark_by_division(
     if k_values is None:
         k_values = [1, 5, 10]
 
+    retriever_display = retriever_name.upper() if retriever_name == 'bm25' else f"Embedding ({embedding_model})"
+
     print("=" * 80)
-    print("BM25 Benchmark by Division")
+    print(f"{retriever_display} Benchmark by Division")
     print("=" * 80)
 
     # Load data
@@ -230,9 +236,15 @@ def run_bm25_benchmark_by_division(
         print(f"\n[2/4] Creating view [{idx}/{total_views}]: {view_name}")
         corpus_view = view_gen.create_text_view(corpus, view_name)
 
-        # Initialize BM25 retriever
-        print("[3/4] Indexing with BM25...")
-        retriever = BM25Retriever()
+        # Initialize retriever based on type
+        print(f"[3/4] Indexing with {retriever_display}...")
+        if retriever_name == 'bm25':
+            retriever = BM25Retriever()
+        elif retriever_name == 'embedding':
+            retriever = EmbeddingRetriever(model_name=embedding_model)
+        else:
+            raise ValueError(f"Unknown retriever: {retriever_name}")
+
         retriever.index(corpus_view)
 
         # Search all queries
@@ -272,12 +284,19 @@ def run_bm25_benchmark_by_division(
     return results_df
 
 
-def format_results_table_by_division(results_df: pd.DataFrame, k_values: List[int] = None) -> str:
+def format_results_table_by_division(
+    results_df: pd.DataFrame,
+    retriever_name: str = 'bm25',
+    embedding_model: str = None,
+    k_values: List[int] = None
+) -> str:
     """
     Format division-specific results as a nice table for display.
 
     Args:
-        results_df: Results DataFrame from run_bm25_benchmark_by_division()
+        results_df: Results DataFrame from run_benchmark_by_division()
+        retriever_name: Name of retriever used ('bm25' or 'embedding')
+        embedding_model: Model name if using embedding retriever
         k_values: K values to include in table
 
     Returns:
@@ -286,9 +305,12 @@ def format_results_table_by_division(results_df: pd.DataFrame, k_values: List[in
     if k_values is None:
         k_values = [1, 5, 10]
 
+    # Build dynamic header based on retriever type
+    retriever_display = retriever_name.upper() if retriever_name == 'bm25' else f"Embedding ({embedding_model})"
+
     lines = []
     lines.append("\n" + "=" * 100)
-    lines.append("BM25 BENCHMARK RESULTS BY DIVISION")
+    lines.append(f"{retriever_display} BENCHMARK RESULTS BY DIVISION")
     lines.append("=" * 100)
 
     # Group by view

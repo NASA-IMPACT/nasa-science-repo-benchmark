@@ -1,0 +1,219 @@
+{"_id": "1", "text": "How do I create PDS labels?", "metadata": {"division": "Planetary"}}
+{"_id": "2", "text": "How do I create a simulated mission, from start to end?", "metadata": {"division": "Planetary"}}
+{"_id": "3", "text": "Is my work compliant and ready to be uploaded to the PDS?", "metadata": {"division": "Planetary"}}
+{"_id": "4", "text": "Provide Jupyter notebook examples illustrating the use of astronomical mosaic images with Montage.", "metadata": {"division": "Astro"}}
+{"_id": "5", "text": "Provide Python examples for analysis of Fermi data.", "metadata": {"division": "Astro"}}
+{"_id": "6", "text": "Provide Python package for the Fermi-GBM Targeted Search and Gamma-ray Targeted Search (GTS).", "metadata": {"division": "Astro"}}
+{"_id": "7", "text": "Provide Workshop Tutorials from the AAS meetings.", "metadata": {"division": "Astro"}}
+{"_id": "8", "text": "Provide a Jupyter notebook example illustrating the use of Firefly.", "metadata": {"division": "Astro"}}
+{"_id": "9", "text": "Provide a Python tool for checking transit signals in Kepler monitoring data.", "metadata": {"division": "Astro"}}
+{"_id": "10", "text": "Provide a tool that can be used to model Point Spread Functions (PSFs).", "metadata": {"division": "Astro"}}
+{"_id": "11", "text": "What Python package can be used to find papers in the Astrophysics Data System (ADS)?", "metadata": {"division": "Astro"}}
+{"_id": "12", "text": "What tools can be used to establish  monitoring services for servicemon?", "metadata": {"division": "Astro"}}
+{"_id": "13", "text": "How can I track movement and velocity of glaciers using satellite observations?", "metadata": {"division": "Earth"}}
+{"_id": "14", "text": "How do I find and locate Earth science datasets across multiple NASA archives?", "metadata": {"division": "Earth"}}
+{"_id": "15", "text": "How do I orchestrate large-scale processing pipelines for Earth observation datasets?", "metadata": {"division": "Earth"}}
+{"_id": "16", "text": "Is there a way to create dynamic map tiles from geospatial raster datasets?", "metadata": {"division": "Earth"}}
+{"_id": "17", "text": "What services help me search for satellite data using geographic boundaries and time ranges?", "metadata": {"division": "Earth"}}
+{"_id": "18", "text": "What toolkit would help me determine asteroid future locations? What minor planets will be in my filed of view for my telescope observations?", "metadata": {"division": "Planetary"}}
+{"_id": "19", "text": "How is the traction for a rover in sandy conditions?", "metadata": {"division": "Planetary"}}
+{"_id": "20", "text": "What was the specific commands for NEAScout to collect data?", "metadata": {"division": "Planetary"}}
+{"_id": "21", "text": "What organic molecule biosignatures were detected with OCEANS in the latest water sample colletion from \"blank\"?", "metadata": {"division": "Planetary"}}
+{"_id": "22", "text": "Are there any target locations in this collection of data that are unique to either this area or Mars as a whole that would warrant a second look and further analysis?", "metadata": {"division": "Planetary"}}
+{"_id": "23", "text": "Is there a way to see overlapping data from different Mars orbiters for a specific location?", "metadata": {"division": "Planetary"}}
+{"_id": "24", "text": "How do I convert lunar DTMs into 3D visulaization?", "metadata": {"division": "Planetary"}}
+{"_id": "25", "text": "How do I create map-projected mosaiscs from CRISM data?", "metadata": {"division": "Planetary"}}
+{"_id": "26", "text": "How do I render an image taken by Curiosity and overlay its viewing geometery in a 3D scene?", "metadata": {"division": "Planetary"}}
+{"_id": "27", "text": "How do I stitch these rover snapshot images together to make a larger image of the martian landscape?", "metadata": {"division": "Planetary"}}
+{"_id": "28", "text": "How do I create an ineractive layer data set to visualize permenantly shadowed regions on the Moon?", "metadata": {"division": "Planetary"}}
+{"_id": "29", "text": "How can I display terrain maps with illumination models for the lunar south pole?", "metadata": {"division": "Planetary"}}
+{"_id": "30", "text": "What time on Mars did Curiosity drill the Cumberland sample? ", "metadata": {"division": "Planetary"}}
+{"_id": "31", "text": "I have multiple images from different Mars orbiters. How do I combine them together to make a single image?", "metadata": {"division": "Planetary"}}
+{"_id": "32", "text": "How can I get started modeling simulated spacecraft activitites?", "metadata": {"division": "Planetary"}}
+{"_id": "33", "text": "How do I create PDS4 metadata labels?", "metadata": {"division": "Planetary"}}
+{"_id": "34", "text": "How can I archieve PDS data?", "metadata": {"division": "Planetary"}}
+{"_id": "35", "text": "How do I bundle all of my data sets together and create a DOI for my publication?", "metadata": {"division": "Planetary"}}
+{"_id": "36", "text": "How do I bundle SPICE kernels of Europa Clipper's trajectory during a flyby of Eruropa?", "metadata": {"division": "Planetary"}}
+{"_id": "37", "text": "What Python package can be used to convert ADQL Sky data to SQL database?", "metadata": {"division": "Astro"}}
+{"_id": "38", "text": "What API library can be used to get access to the NASA Exoplanet Archival data of the Kepler Mission?", "metadata": {"division": "Astro"}}
+{"_id": "39", "text": "What toolkit can be used to build a single mosaic FITS file image from multiple FITS images files?", "metadata": {"division": "Astro"}}
+{"_id": "40", "text": "Provide Jupyter notebook examples illustrating the use of astronomical mosaic images with MontagePy.", "metadata": {"division": "Astro"}}
+{"_id": "41", "text": "Provide a spatial indexing library for the use with Database Management Systems (DBMSs) of astronomical data.", "metadata": {"division": "Astro"}}
+{"_id": "42", "text": "Provide a Jupyter notebook example for creating Cutouts of TESS coadded images in Python.", "metadata": {"division": "Astro"}}
+{"_id": "43", "text": "Provide a Web-based API library for accessing and visualizing astronomical archival data.", "metadata": {"division": "Astro"}}
+{"_id": "44", "text": "Provide an NPM module for accessing Firefly API to get and visualize astronomical archival data.", "metadata": {"division": "Astro"}}
+{"_id": "45", "text": "Provide a Jupyter notebook example illustrating the use of Firefly in Python.", "metadata": {"division": "Astro"}}
+{"_id": "46", "text": "Provide a Python API package for accessing Firefly API to get and visualize astronomical archival data.", "metadata": {"division": "Astro"}}
+{"_id": "47", "text": "What Python pipeline package can be used to get andf process data from Keck HIRES PRV?", "metadata": {"division": "Astro"}}
+{"_id": "48", "text": "Provide a Jupyter exmaple for rendering FITS file and displaying tables and images using the package Firefly.", "metadata": {"division": "Astro"}}
+{"_id": "49", "text": "What Python package can be used to establish a Table Access Protocol (TAP) Server for ADQL Database?", "metadata": {"division": "Astro"}}
+{"_id": "50", "text": "What Python package can be used to provide access to the NEID Archive (neid.ipac.caltech.edu)?", "metadata": {"division": "Astro"}}
+{"_id": "51", "text": "Provide a pipeline code for the use of dax_butler, theRubin/LSST Gen3 Butler and PipelineTask framework in SPHEREx?", "metadata": {"division": "Astro"}}
+{"_id": "52", "text": "What Python package can be used to configure AWS EC2 for establishing NAVO servicemon Virtual Observatory (VO) queries?", "metadata": {"division": "Astro"}}
+{"_id": "53", "text": "What Python package can be used to support NAVO servicemon Virtual Observatory (VO) services?", "metadata": {"division": "Astro"}}
+{"_id": "54", "text": "What Python package can be used to make monitoring services?", "metadata": {"division": "Astro"}}
+{"_id": "55", "text": "What Python package can be used to find papers in the Astrophysics Data System with ML/NLP?", "metadata": {"division": "Astro"}}
+{"_id": "56", "text": "Provide a Python tool that can be used to create models of instrument effective Point Spread Functions (PSFs),", "metadata": {"division": "Astro"}}
+{"_id": "57", "text": "Provide a Python package for correcting backgroud scattered lights in TESS FFLs.", "metadata": {"division": "Astro"}}
+{"_id": "58", "text": "Provide a Python tool for chelcking transit signals in Kepler, K2 and TESS monitoring data.", "metadata": {"division": "Astro"}}
+{"_id": "59", "text": "Provide a Python package for the Fermi-GBM Targeted Search and Gamma-ray Targeted Search (GTS).", "metadata": {"division": "Astro"}}
+{"_id": "60", "text": "Provide some Python examples showing step-by-step guides on analysis of Fermi data.", "metadata": {"division": "Astro"}}
+{"_id": "61", "text": "The code could be non astro, while used by Hydrogen Epoch of Reionization Array (HERA), since it tracks all of the primary data products stored at a given site.", "metadata": {"division": "Astro"}}
+{"_id": "62", "text": "What tool can verify if web service endpoints in my data catalog are still accessible and working", "metadata": {"division": "Earth"}}
+{"_id": "63", "text": "How can I build a mobile app that displays NASA satellite videos and allows users to analyze imagery on smartphones", "metadata": {"division": "Earth"}}
+{"_id": "64", "text": "What system can automatically monitor the health status of my geospatial web services and send alerts when they're down?", "metadata": {"division": "Earth"}}
+{"_id": "65", "text": "Where can I find hands-on tutorials for training AI models on satellite data using Amazon Web Services?", "metadata": {"division": "Earth"}}
+{"_id": "66", "text": "How can I create a web interface to monitor the progress of large file transfers in real-time?", "metadata": {"division": "Earth"}}
+{"_id": "67", "text": "What workshop materials are available for learning to apply machine learning to geospatial datasets?", "metadata": {"division": "Earth"}}
+{"_id": "68", "text": "Is there a system that can generate GIS analysis code automatically when I describe what I want in plain English?", "metadata": {"division": "Earth"}}
+{"_id": "69", "text": "What pre-trained model can analyze sequences of satellite images to understand changes over time?", "metadata": {"division": "Earth"}}
+{"_id": "70", "text": "How can I use a transformer-based neural network to process and predict weather patterns from meteorological data?", "metadata": {"division": "Earth"}}
+{"_id": "71", "text": "What service can validate the quality and completeness of metadata descriptions for my satellite datasets", "metadata": {"division": "Earth"}}
+{"_id": "72", "text": "How can I build an interactive table interface where multiple users can explore disaster risk maps simultaneously", "metadata": {"division": "Earth"}}
+{"_id": "73", "text": "Where can I find standardized test datasets to evaluate how well my AI model performs on weather prediction tasks?", "metadata": {"division": "Earth"}}
+{"_id": "74", "text": "What database system can help researchers discover and access information about past and ongoing airborne science missions?", "metadata": {"division": "Earth"}}
+{"_id": "75", "text": "How can I automatically process and organize navigation data collected during aircraft research flights?", "metadata": {"division": "Earth"}}
+{"_id": "76", "text": "What system helps maintain consistency between climate datasets listed on Data.gov and their actual availability?", "metadata": {"division": "Earth"}}
+{"_id": "77", "text": "How can I efficiently import large volumes of satellite metadata records into a PostgreSQL database for searching?", "metadata": {"division": "Earth"}}
+{"_id": "78", "text": "What proxy service can make NASA's data catalog searchable using modern STAC API standards?", "metadata": {"division": "Earth"}}
+{"_id": "79", "text": "How can I serve map tiles that show environmental changes visible from space during major global events?", "metadata": {"division": "Earth"}}
+{"_id": "80", "text": "What web platform can display how human activities affect the environment as seen by satellites?", "metadata": {"division": "Earth"}}
+{"_id": "81", "text": "How can I use hyperspectral satellite data to detect and map harmful algae blooms in water bodies?", "metadata": {"division": "Earth"}}
+{"_id": "82", "text": "What command-line tool can help me download hundreds of satellite images that I've ordered from a data provider?", "metadata": {"division": "Earth"}}
+{"_id": "83", "text": "How can I set up an AWS-based system to automatically process and catalog incoming satellite imagery", "metadata": {"division": "Earth"}}
+{"_id": "84", "text": "What tool can generate temporary access credentials for users to securely download large files from cloud storage?", "metadata": {"division": "Earth"}}
+{"_id": "85", "text": "How can I manage and monitor my distributed satellite data processing workflows from the command line?", "metadata": {"division": "Earth"}}
+{"_id": "86", "text": "What template can I use to quickly build a REST API that serves map tiles and geospatial data for web applications?", "metadata": {"division": "Earth"}}
+{"_id": "87", "text": "How can I automatically generate configuration files for my web dashboard from a collection of dataset definitions?", "metadata": {"division": "Earth"}}
+{"_id": "88", "text": "Where can I find labeled training data showing different types of clouds and atmospheric phenomena for computer vision?", "metadata": {"division": "Earth"}}
+{"_id": "89", "text": "What automated system can ensure my climate data portal maintains consistent dataset listings and working links?", "metadata": {"division": "Earth"}}
+{"_id": "90", "text": "How can I quickly build a web application for exploring and visualizing satellite imagery collections?", "metadata": {"division": "Earth"}}
+{"_id": "91", "text": "What service can automatically refresh authentication tokens to prevent data access interruptions?", "metadata": {"division": "Earth"}}
+{"_id": "92", "text": "How can I prototype a backend service for delivering Earth science data through web-based visualization tools?", "metadata": {"division": "Earth"}}
+{"_id": "93", "text": "What experimental system can help organize scientific datasets for display in interactive web applications", "metadata": {"division": "Earth"}}
+{"_id": "94", "text": "How can I create a demonstration platform for interactive exploration of satellite and sensor data?", "metadata": {"division": "Earth"}}
+{"_id": "95", "text": "What Python libraries can help me work with metadata from Earth observation satellites and validate its quality?", "metadata": {"division": "Earth"}}
+{"_id": "96", "text": "How can I deploy a complete API stack that provides search, map tiles, and vector data access for satellite imagery?", "metadata": {"division": "Earth"}}
+{"_id": "97", "text": "What containerized environment includes all the dependencies needed for processing Landsat satellite images?", "metadata": {"division": "Earth"}}
+{"_id": "98", "text": "What libraries can convert satellite image data between different file formats used by various processing systems?", "metadata": {"division": "Earth"}}
+{"_id": "99", "text": "How can I read and manipulate ENVI headers and XML metadata files from satellite imagery in Python?", "metadata": {"division": "Earth"}}
+{"_id": "100", "text": "What algorithms can remove atmospheric effects from satellite measurements to get accurate surface reflectance values?", "metadata": {"division": "Earth"}}
+{"_id": "101", "text": "How can I train a neural network to predict atmospheric gravity wave patterns and momentum fluxes from meteorological data?", "metadata": {"division": "Earth"}}
+{"_id": "102", "text": "Is there a tool that converts intermediate Landsat surface reflectance data into standard map tiles for spatial analysis?", "metadata": {"division": "Earth"}}
+{"_id": "103", "text": "Is there a tool for processing HLS satellite scenes into AWS stacks for both historic and streaming workflows?", "metadata": {"division": "Earth"}}
+{"_id": "104", "text": "How can I compare satellite product inventories across different sources to reconcile missing or inconsistent data automatically?", "metadata": {"division": "Earth"}}
+{"_id": "105", "text": "How can I automatically check and report inconsistencies between different satellite data inventories for the same time periods?", "metadata": {"division": "Earth"}}
+{"_id": "106", "text": "What tool can convert satellite mask files from JP2 format into ENVI format for easier analysis?", "metadata": {"division": "Earth"}}
+{"_id": "107", "text": "How can I automatically generate standardized metadata files for satellite imagery products to share with data catalogs?", "metadata": {"division": "Earth"}}
+{"_id": "108", "text": "Where can I find a tool to automatically download and manage historical Sentinel-2 imagery from European data services with options to push files to cloud storage?", "metadata": {"division": "Earth"}}
+{"_id": "109", "text": "How can I automatically set up and manage a cloud-based pipeline for processing satellite data with AWS services?", "metadata": {"division": "Earth"}}
+{"_id": "110", "text": "Where can I find an overview of all the components involved in building a global cloud-based pipeline for producing harmonized Landsat and Sentinel satellite products?", "metadata": {"division": "Earth"}}
+{"_id": "111", "text": "How can I generate harmonized Sentinel-2 satellite products using a containerized workflow that runs on cloud infrastructure?", "metadata": {"division": "Earth"}}
+{"_id": "112", "text": "What cloud-based tool can I deploy to automatically fetch Sentinel-2 imagery from Copernicus and upload it to Amazon S3 for processing?", "metadata": {"division": "Earth"}}
+{"_id": "113", "text": "How can I set up a serverless system on AWS to automatically download and manage Sentinel-2 imagery from Copernicus and SciHub into cloud storage?", "metadata": {"division": "Earth"}}
+{"_id": "114", "text": "How can I view a live dashboard showing the health and processing metrics of a satellite data pipeline?", "metadata": {"division": "Earth"}}
+{"_id": "115", "text": "Is there a tool that can automatically create quick-look thumbnail images from large satellite data products for easier browsing?", "metadata": {"division": "Earth"}}
+{"_id": "116", "text": "What set of Python tools can help me handle common preprocessing tasks like masking, metadata checks, and file conversions for Landsat and Sentinel satellite data?", "metadata": {"division": "Earth"}}
+{"_id": "117", "text": "How can I automatically generate vegetation index layers like NDVI from harmonized Landsat and Sentinel satellite products?", "metadata": {"division": "Earth"}}
+{"_id": "118", "text": "How can I set up an automated system to process historical satellite imagery and generate vegetation indices at scale?", "metadata": {"division": "Earth"}}
+{"_id": "119", "text": "How can I explore and visualize emission plumes interactively on a map to understand pollution dispersion over time?", "metadata": {"division": "Earth"}}
+{"_id": "120", "text": "How can I automatically download and update the auxiliary data needed for running the LASRC atmospheric correction algorithm?", "metadata": {"division": "Earth"}}
+{"_id": "121", "text": "How can I use deep learning with commercial satellite imagery to automatically detect floating plastic and debris in ocean scenes?", "metadata": {"division": "Earth"}}
+{"_id": "122", "text": "What open-source server can I deploy to serve map tiles (MBTiles) for interactive visualization of geospatial data?", "metadata": {"division": "Earth"}}
+{"_id": "123", "text": "What framework can I adopt to set up project-specific science data governance and management policies that align with open data mandates and best practices?", "metadata": {"division": "Earth"}}
+{"_id": "124", "text": "What tool provides a web-interface for authoring, publishing, and maintaining scientific algorithm documentation for Earth science?", "metadata": {"division": "Earth"}}
+{"_id": "125", "text": "What tool can I use to build a modern website for government content that supports storytelling, maps, and interactive visual components?", "metadata": {"division": "Earth"}}
+{"_id": "126", "text": "What front-end framework offers a clean way to build geospatial story pages and visual data dashboards using USWDS style with React/Next.js?", "metadata": {"division": "Earth"}}
+{"_id": "127", "text": "What tool helps with setting up and deploying a NASA-NOAA Cumulus data ingestion stack with custom workflows and infrastructure?", "metadata": {"division": "Earth"}}
+{"_id": "128", "text": "What API can I use to serve metadata, timelapse and dataset endpoints so I can build a dashboard of Earth-data resources?", "metadata": {"division": "Earth"}}
+{"_id": "129", "text": "What API or dashboard service gives me access to endpoint(s) listing and filtering available Earth-observation datasets for visualization and analysis?", "metadata": {"division": "Earth"}}
+{"_id": "130", "text": "What dashboard can I use to explore Earth satellite imagery and raster visualizations via a simple web-interface for public data?", "metadata": {"division": "Earth"}}
+{"_id": "131", "text": "What registry lists publicly accessible datasets hosted on AWS so that I can find data I can analyze without first downloading everything?", "metadata": {"division": "Earth"}}
+{"_id": "132", "text": "What tool can I use to train a model to detect specific pixel-level features in Earth observation or science imagery when I dont know what anomalies to expect?", "metadata": {"division": "Earth"}}
+{"_id": "133", "text": "What tool can I use to draw the flight or path trajectories of various platforms used in NASA campaigns to display on a map catalog?", "metadata": {"division": "Earth"}}
+{"_id": "134", "text": "What workshop materials show me how to fine-tune geospatial foundation models using cloud notebooks and satellite burn scar datasets?", "metadata": {"division": "Earth"}}
+{"_id": "135", "text": "What tool can I use to evaluate and flag quality issues, gaps, or inconsistencies in Earth-observation metadata hosted in a large catalog like NASAs CMR?", "metadata": {"division": "Earth"}}
+{"_id": "136", "text": "What tool can I use to convert metadata from Esri map/image services into STAC format so ArcGIS services are discoverable alongside open STAC catalogs?", "metadata": {"division": "Earth"}}
+{"_id": "137", "text": "What library helps me quickly generate map tiles or previews from large raster files hosted locally or in the cloud?", "metadata": {"division": "Earth"}}
+{"_id": "138", "text": "What resources are available to set up AI workflows for remote sensing in hackathons using SageMaker and TerraTorch?", "metadata": {"division": "Earth"}}
+{"_id": "139", "text": "What repository contains evidence, articles, and case studies demonstrating the impact and value of satellite data solutions endorsed by working groups?", "metadata": {"division": "Earth"}}
+{"_id": "140", "text": "What repository contains example use-cases and impact stories showing how Earth observation solutions deliver value and societal benefits?", "metadata": {"division": "Earth"}}
+{"_id": "141", "text": "What resources exist to help me take part in a satellite imagery \"phenomena detection\" challenge, including example code, labeled imagery, and imagery download tools", "metadata": {"division": "Earth"}}
+{"_id": "142", "text": "What tool allows administrators to manage and configure collections, access rights, and metadata in a STAC catalog via a user interface?", "metadata": {"division": "Earth"}}
+{"_id": "143", "text": "What tool can I use to convert CMIP6 climate model outputs into STAC-formatted metadata for easier cataloging and discovery?", "metadata": {"division": "Earth"}}
+{"_id": "144", "text": "What open resources exist to learn about Earth science data processing, remote sensing, and practical workflows via hands-on materials from a summer school program?", "metadata": {"division": "Earth"}}
+{"_id": "145", "text": "What server can I use to serve dynamic map tiles from Cloud-Optimized GeoTIFFs and STAC assets via a web API?", "metadata": {"division": "Earth"}}
+{"_id": "146", "text": "What tool lets me interactively map and compare spatial datasets across multiple linked map panels (e.g. showing different metrics or regions side by side)?", "metadata": {"division": "Earth"}}
+{"_id": "147", "text": "What app lets me explore real-time fire detections, perimeters, and fireline fronts to understand wildfire progression on an interactive map?", "metadata": {"division": "Earth"}}
+{"_id": "148", "text": "What infrastructure code lets me deploy a user-friendly STAC catalog browser front-end for exploring Earth-observation metadata?", "metadata": {"division": "Earth"}}
+{"_id": "149", "text": "What tool can I use to detect and monitor supraglacial lakes via AI segmentation on satellite or aerial imagery?", "metadata": {"division": "Earth"}}
+{"_id": "150", "text": "What tool provides a backend system for managing a spatial-temporal asset catalog with APIs and tile serving for Earth science data discovery and visualization?", "metadata": {"division": "Earth"}}
+{"_id": "151", "text": "What template repository can I use to configure and customize my data-dashboard sites datasets, stories, styling and layout?", "metadata": {"division": "Earth"}}
+{"_id": "152", "text": "What repo provides configuration and content for a VEDA UI instance tailored to Earth.gov, including datasets, stories, styles, and layout?", "metadata": {"division": "Earth"}}
+{"_id": "153", "text": "What tool lets me explore and interact with emission plume data in a mapping dashboard format to understand spatial and temporal changes?", "metadata": {"division": "Earth"}}
+{"_id": "154", "text": "What tool lets me interactively explore, map, and analyze wildfire detections and perimeters to make sense of fire behavior over time?", "metadata": {"division": "Earth"}}
+{"_id": "155", "text": "What workshop helps researchers learn how to find, access, and analyze ECOSTRESS v2 satellite data in the cloud using tools like Earthdata, xarray, and S3 direct file access?", "metadata": {"division": "Earth"}}
+{"_id": "156", "text": "What tools and examples can show me how to use remote sensing data (snow, glaciers, permafrost) in the High Mountain Asia region for environmental change studies?", "metadata": {"division": "Earth"}}
+{"_id": "157", "text": "What tool can I use to process and analyze ocean-model output over the pan-Arctic domain, converting binary ECCO datasets into NetCDF/Zarr and run diagnostic analyses?", "metadata": {"division": "Earth"}}
+{"_id": "158", "text": "What pipeline lets me work with satellite-derived or in-situ salinity & stratification data to monitor sea surface freshwater anomalies and ice-edge effects?", "metadata": {"division": "Earth"}}
+{"_id": "159", "text": "What tool helps me package field campaign observations into NetCDF files with proper metadata so they can be archived and shared?", "metadata": {"division": "Earth"}}
+{"_id": "160", "text": "What tool helps me align and compare in-situ observations with matching satellite measurements (e.g. sea surface salinity from field sensors vs satellite data)?", "metadata": {"division": "Earth"}}
+{"_id": "161", "text": "What tools allow me to fetch field-observation data, produce overview plots, and export those data to spreadsheets for environmental study?", "metadata": {"division": "Earth"}}
+{"_id": "162", "text": "What tool lets me load, manipulate, and visualize satellite datasets like sea-ice or SMAP in notebooks for environmental research?", "metadata": {"division": "Earth"}}
+{"_id": "163", "text": "How can I access and query a database of spacecraft material outgassing rates to evaluate contamination effects on missions?", "metadata": {"division": "Earth"}}
+{"_id": "164", "text": "Is there a visualization that shows Earths position from different planets and spacecraft to illustrate the pale blue dot perspective?", "metadata": {"division": "Earth"}}
+{"_id": "165", "text": "Where can I find an interactive map that displays natural events like storms, fires, and volcanic activity from NASAs EONET feed?", "metadata": {"division": "Earth"}}
+{"_id": "166", "text": "What open-source JavaScript library lets me build 3D virtual globes and interactive maps directly in the browser?", "metadata": {"division": "Earth"}}
+{"_id": "167", "text": "How can I build Android apps that render 3D globes and display geographic or scientific data layers interactively?", "metadata": {"division": "Earth"}}
+{"_id": "168", "text": "What Java SDK lets me create desktop applications with 3D Earth visualization and overlays of geospatial data?", "metadata": {"division": "Earth"}}
+{"_id": "169", "text": "How can I classify and map different land cover types across large areas using remote sensing data and cloud or local compute?", "metadata": {"division": "Earth"}}
+{"_id": "170", "text": "Where can I find tools to monitor water levels, forecast floods, and view historical hydrology via web apps in Colombia?", "metadata": {"division": "Earth"}}
+{"_id": "171", "text": "Is there a model that can predict fire risk or probability in the Colombian Amazon using past climate and forest loss data?", "metadata": {"division": "Earth"}}
+{"_id": "172", "text": "How can I compare and inspect the quality and coverage of GEDI data between LPDAAC and Earth Engine for a given area of interest?", "metadata": {"division": "Earth"}}
+{"_id": "173", "text": "What project maps land cover and land use for Imbabura, Ecuador using both optical and radar satellite imagery despite persistent cloud cover?", "metadata": {"division": "Earth"}}
+{"_id": "174", "text": "What scripts exist for monitoring mining activity in the Peruvian Amazon using remote sensing or GIS data?", "metadata": {"division": "Earth"}}
+{"_id": "175", "text": "Where can I get example Google Earth Engine scripts used for training sessions in the Dominican Republic?", "metadata": {"division": "Earth"}}
+{"_id": "176", "text": "How can I automate the download, processing, and analysis of Sentinel-1 radar imagery regularly for monitoring land or environmental change?", "metadata": {"division": "Earth"}}
+{"_id": "177", "text": "What machine learning tools can I use to build predictive models for environmental variables (like deforestation or water quality) in the Amazon region?", "metadata": {"division": "Earth"}}
+{"_id": "178", "text": "Is there a way to map forest cover loss or land use change in Colombia using local satellite imagery and open data tools?", "metadata": {"division": "Earth"}}
+{"_id": "179", "text": "Where can I get training modules or example workflows for using remote sensing and geospatial tools applied to Surinames forests and environment?", "metadata": {"division": "Earth"}}
+{"_id": "180", "text": "What datasets and tools are available for studying snowpack structure and melt timing in mountainous regions?", "metadata": {"division": "Earth"}}
+{"_id": "181", "text": "How can I visualize and analyze snow pit measurements to understand snow density layers and physical properties?", "metadata": {"division": "Earth"}}
+{"_id": "182", "text": "What framework helps compare snow model outputs with physical snow observations for validation of snowpack behavior?", "metadata": {"division": "Earth"}}
+{"_id": "183", "text": "What Python tools exist for working with UAVSAR radar data to analyze surface deformation or changes over time?", "metadata": {"division": "Earth"}}
+{"_id": "184", "text": "How can I process UAVSAR data specifically for snow cover and snow melt monitoring?", "metadata": {"division": "Earth"}}
+{"_id": "185", "text": "What client for submitting acquisition schedules or queries to satellite or airborne data acquisition systems?", "metadata": {"division": "Earth"}}
+{"_id": "186", "text": "Is there a pipeline to process ALOS-2 radar data into Analysis Ready Products for applications like InSAR or surface deformation?", "metadata": {"division": "Earth"}}
+{"_id": "187", "text": "How can I register and manage Areas of Interest (AOIs) automatically for scheduling satellite observations or data retrieval?", "metadata": {"division": "Earth"}}
+{"_id": "188", "text": "What website shows the ARIA projects public documentation, updates, and resources?", "metadata": {"division": "Earth"}}
+{"_id": "189", "text": "How can I monitor and visualize surface deformation using ARIAs Advanced Rapid Imaging and Analysis tools in a browser?", "metadata": {"division": "Earth"}}
+{"_id": "190", "text": "What tool lets me query SAR/INSAR datasets from the Alaska Satellite Facility using ARIA filters?", "metadata": {"division": "Earth"}}
+{"_id": "191", "text": "Is there a service for ensuring reliable data transfers between ARIA and ASF data storage when new SAR products arrive?", "metadata": {"division": "Earth"}}
+{"_id": "192", "text": "What script can scrape radar acquisition metadata (SAR catalog) for Boston or other AOIs from open sources?", "metadata": {"division": "Earth"}}
+{"_id": "193", "text": "How can I collect or list coseismic interferograms or SLC pairs automatically following an earthquake?", "metadata": {"division": "Earth"}}
+{"_id": "194", "text": "Where can I find pipelines that generate coseismic displacement maps (from SAR interferometry) after seismic events?", "metadata": {"division": "Earth"}}
+{"_id": "195", "text": "What tool joins USGS/NEIC earthquake event data with coseismic displacement products to map ground movement?", "metadata": {"division": "Earth"}}
+{"_id": "196", "text": "How can I assess how well satellite-derived coseismic displacement products match USGS event data?", "metadata": {"division": "Earth"}}
+{"_id": "197", "text": "What backend can serve time-series of ground displacement for regions after earthquakes for visualization or analysis?", "metadata": {"division": "Earth"}}
+{"_id": "198", "text": "How do I define infrastructure as code to deploy a displacement time-series server on cloud platforms?", "metadata": {"division": "Earth"}}
+{"_id": "199", "text": "Where can I get tutorials, API specs, or workflows for ARIA tools and products?", "metadata": {"division": "Earth"}}
+{"_id": "200", "text": "What toolkit helps produce large scale InSAR time-series analyses across many radar scenes over years?", "metadata": {"division": "Earth"}}
+{"_id": "201", "text": "What are tools to extract small image patches (stamps) around detected deformation events from InSAR stacks for further analysis?", "metadata": {"division": "Earth"}}
+{"_id": "202", "text": "How can I forecast where landslides are likely to occur using satellite terrain, rainfall, and geologic indicators?", "metadata": {"division": "Earth"}}
+{"_id": "203", "text": "Is there a lightweight model to predict landslide susceptibility using minimal inputs?", "metadata": {"division": "Earth"}}
+{"_id": "204", "text": "What alternative approach exists for landslide prediction with different or simpler features?", "metadata": {"division": "Earth"}}
+{"_id": "205", "text": "How can I push geospatial tiles or layers into a Leaflet map dynamically from local or cloud sources?", "metadata": {"division": "Earth"}}
+{"_id": "206", "text": "What simple tool can generate water masks from optical or radar imagery without large computational overhead?", "metadata": {"division": "Earth"}}
+{"_id": "207", "text": "How can I produce persistent scatterer or small baseline InSAR deformation maps using MintPy in a production environment?", "metadata": {"division": "Earth"}}
+{"_id": "208", "text": "What client library allows me to query ARIAs data services for assets, metadata, and deformation products?", "metadata": {"division": "Earth"}}
+{"_id": "209", "text": "Is there a tool to assess vegetation cover or greenness using Sentinel-1 backscatter data over agricultural regions?", "metadata": {"division": "Earth"}}
+{"_id": "210", "text": "What pipeline ingests Sentinel-1 scenes and performs quality checks before adding them to analysis workflows?", "metadata": {"division": "Earth"}}
+{"_id": "211", "text": "Where can I find a script that tracks new Sentinel-data acquisitions from SciHub for areas of interest?", "metadata": {"division": "Earth"}}
+{"_id": "212", "text": "Is there a converter to turn Sentinel-1 or other SAR coherence products (slcp) into colormap files (COD) usable in GIS?", "metadata": {"division": "Earth"}}
+{"_id": "213", "text": "How can I transform sparse coherence (slcp) products into dense coherence (COR) representations for change detection?", "metadata": {"division": "Earth"}}
+{"_id": "214", "text": "What tool converts sparse coherence to phase metrics (PM) for interferometric or change-analysis workflows?", "metadata": {"division": "Earth"}}
+{"_id": "215", "text": "At what Earth time will both Odyssey and MRO be over Gale Crater within 10 minutes of each other?", "metadata": {"division": "Planetary"}}
+{"_id": "216", "text": "Which HiRISE or CTX images cover the floor of Gale Crater, and what are their associated pixel scale and emission angle metadata?", "metadata": {"division": "Planetary"}}
+{"_id": "217", "text": "How do changes in a planets gravity field over time inform our understanding of its interior structure and dynamics?", "metadata": {"division": "Planetary"}}
+{"_id": "218", "text": "When was MRO observed by each DSN station during the 2018 global dust storm, and how did link geometry affect tracking quality?", "metadata": {"division": "Planetary"}}
+{"_id": "219", "text": "From multi-pass tracking over Valles Marineris, detect persistent gravity anomalies and relate them to plausible crustal thickness contrasts.", "metadata": {"division": "Planetary"}}

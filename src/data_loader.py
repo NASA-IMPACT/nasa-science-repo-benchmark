@@ -1,39 +1,44 @@
 """Data loading utilities for NASA Science Repos Benchmark"""
 
 import pandas as pd
+import json
 from datasets import load_dataset
 from typing import Dict, Any
 from pathlib import Path
 
 
+# Use local corrected benchmark data (HuggingFace qrels are corrupted)
+LOCAL_BENCHMARK_DIR = Path("data/benchmark_updated")
+
+
 def load_benchmark_corpus() -> pd.DataFrame:
     """
-    Load the benchmark corpus from HuggingFace dataset.
+    Load the benchmark corpus.
 
     Returns:
         DataFrame with columns: _id, title, text, url
     """
+    # Use corrected local files
+    local_corpus = LOCAL_BENCHMARK_DIR / "corpus.jsonl"
+    if local_corpus.exists():
+        print(f"Loading benchmark corpus from {local_corpus}...")
+        records = []
+        with open(local_corpus, 'r') as f:
+            for line in f:
+                records.append(json.loads(line))
+        df = pd.DataFrame(records)
+        print(f"Loaded {len(df)} documents from local corpus")
+        return df
+
+    # Fallback to HuggingFace
     print("Loading benchmark corpus from HuggingFace...")
-    dataset = load_dataset("nasa-impact/nasa-science-repos-sme-benchmark", split="train")
-
-    # Extract corpus.jsonl data
-    # The dataset contains corpus data with _id, title, text, url fields
-    corpus_data = []
-
-    # Check if the dataset has the corpus data directly or if we need to access it differently
-    if hasattr(dataset, 'features') and 'corpus_id' in dataset.features:
-        # Data is in the main dataset
-        df = dataset.to_pandas()
-    else:
-        # Load from data_files directly
-        dataset = load_dataset(
-            "nasa-impact/nasa-science-repos-sme-benchmark",
-            data_files="corpus.jsonl",
-            split="train"
-        )
-        df = dataset.to_pandas()
-
-    print(f"Loaded {len(df)} documents from benchmark corpus")
+    dataset = load_dataset(
+        "nasa-impact/nasa-science-repos-sme-benchmark",
+        data_files="corpus.jsonl",
+        split="train"
+    )
+    df = dataset.to_pandas()
+    print(f"Loaded {len(df)} documents from HuggingFace corpus")
     return df
 
 
@@ -107,15 +112,27 @@ def enrich_corpus(benchmark_corpus: pd.DataFrame, parent_corpus: pd.DataFrame) -
 
 def load_queries() -> pd.DataFrame:
     """
-    Load queries from HuggingFace benchmark dataset with CSV fallback.
+    Load queries from local benchmark or HuggingFace.
 
     Returns:
         DataFrame with columns: _id, text, metadata
     """
     print("Loading queries...")
 
+    # Use corrected local files
+    local_queries = LOCAL_BENCHMARK_DIR / "queries.jsonl"
+    if local_queries.exists():
+        print(f"Loading queries from {local_queries}...")
+        records = []
+        with open(local_queries, 'r') as f:
+            for line in f:
+                records.append(json.loads(line))
+        df = pd.DataFrame(records)
+        print(f"Loaded {len(df)} queries from local file")
+        return df
+
+    # Fallback to HuggingFace
     try:
-        # Try loading from HuggingFace
         dataset = load_dataset(
             "nasa-impact/nasa-science-repos-sme-benchmark",
             data_files="queries.jsonl",
@@ -126,21 +143,7 @@ def load_queries() -> pd.DataFrame:
         return df
     except Exception as e:
         print(f"Could not load from HuggingFace: {e}")
-        print("Trying local CSV fallback...")
-
-        # Fallback to local CSV
-        csv_path = Path("data/code_validation_data_v4_normalized_full_dataset.csv")
-        if csv_path.exists():
-            df = pd.read_csv(csv_path)
-            # Rename columns to match expected format
-            df = df.rename(columns={'id': '_id', 'question': 'text'})
-            # Create metadata from division
-            if 'division' in df.columns:
-                df['metadata'] = df.apply(lambda row: {'division': row['division']}, axis=1)
-            print(f"Loaded {len(df)} queries from local CSV")
-            return df
-        else:
-            raise FileNotFoundError(f"Could not find queries in HuggingFace or local CSV at {csv_path}")
+        raise
 
 
 def load_qrels() -> Dict[str, Dict[str, int]]:
@@ -154,7 +157,30 @@ def load_qrels() -> Dict[str, Dict[str, int]]:
 
     qrels_data = {}
 
-    # Load each qrels file
+    # Use corrected local files
+    local_qrels_dir = LOCAL_BENCHMARK_DIR / "qrels"
+    if local_qrels_dir.exists():
+        for division in ['earth', 'astro', 'planetary']:
+            qrels_file = local_qrels_dir / f"{division}.tsv"
+            if qrels_file.exists():
+                df = pd.read_csv(qrels_file, sep='\t')
+                for _, row in df.iterrows():
+                    query_id = str(row['query-id'])
+                    corpus_id = str(row['corpus-id'])
+                    score = int(row['score'])
+
+                    if query_id not in qrels_data:
+                        qrels_data[query_id] = {}
+                    qrels_data[query_id][corpus_id] = score
+
+                print(f"  Loaded {len(df)} qrels from local {division}.tsv")
+
+        if qrels_data:
+            total_qrels = sum(len(v) for v in qrels_data.values())
+            print(f"Loaded {len(qrels_data)} queries with {total_qrels} relevance judgments")
+            return qrels_data
+
+    # Fallback to HuggingFace
     for division in ['earth', 'astro', 'planetary']:
         try:
             dataset = load_dataset(
@@ -164,7 +190,6 @@ def load_qrels() -> Dict[str, Dict[str, int]]:
             )
             df = dataset.to_pandas()
 
-            # Convert to nested dict format
             for _, row in df.iterrows():
                 query_id = str(row['query-id'])
                 corpus_id = str(row['corpus-id'])
@@ -174,7 +199,7 @@ def load_qrels() -> Dict[str, Dict[str, int]]:
                     qrels_data[query_id] = {}
                 qrels_data[query_id][corpus_id] = score
 
-            print(f"  Loaded {len(df)} qrels from {division}.tsv")
+            print(f"  Loaded {len(df)} qrels from HuggingFace {division}.tsv")
         except Exception as e:
             print(f"  Warning: Could not load qrels/{division}.tsv: {e}")
 
@@ -232,7 +257,35 @@ def load_qrels_by_division() -> Dict[str, Dict[str, Dict[str, int]]]:
         'holistic': {}
     }
 
-    # Load each division's qrels separately
+    # Use corrected local files
+    local_qrels_dir = LOCAL_BENCHMARK_DIR / "qrels"
+    if local_qrels_dir.exists():
+        for division in ['earth', 'astro', 'planetary']:
+            qrels_file = local_qrels_dir / f"{division}.tsv"
+            if qrels_file.exists():
+                df = pd.read_csv(qrels_file, sep='\t')
+                for _, row in df.iterrows():
+                    query_id = str(row['query-id'])
+                    corpus_id = str(row['corpus-id'])
+                    score = int(row['score'])
+
+                    if query_id not in qrels_by_division[division]:
+                        qrels_by_division[division][query_id] = {}
+                    qrels_by_division[division][query_id][corpus_id] = score
+
+                    if query_id not in qrels_by_division['holistic']:
+                        qrels_by_division['holistic'][query_id] = {}
+                    qrels_by_division['holistic'][query_id][corpus_id] = score
+
+                print(f"  Loaded {len(df)} qrels from local {division}.tsv ({len(qrels_by_division[division])} queries)")
+
+        if qrels_by_division['holistic']:
+            total_queries = len(qrels_by_division['holistic'])
+            total_qrels = sum(len(v) for v in qrels_by_division['holistic'].values())
+            print(f"Total: {total_queries} queries with {total_qrels} relevance judgments")
+            return qrels_by_division
+
+    # Fallback to HuggingFace
     for division in ['earth', 'astro', 'planetary']:
         try:
             dataset = load_dataset(
@@ -242,23 +295,20 @@ def load_qrels_by_division() -> Dict[str, Dict[str, Dict[str, int]]]:
             )
             df = dataset.to_pandas()
 
-            # Convert to nested dict format
             for _, row in df.iterrows():
                 query_id = str(row['query-id'])
                 corpus_id = str(row['corpus-id'])
                 score = int(row['score'])
 
-                # Add to division-specific qrels
                 if query_id not in qrels_by_division[division]:
                     qrels_by_division[division][query_id] = {}
                 qrels_by_division[division][query_id][corpus_id] = score
 
-                # Also add to holistic (all divisions combined)
                 if query_id not in qrels_by_division['holistic']:
                     qrels_by_division['holistic'][query_id] = {}
                 qrels_by_division['holistic'][query_id][corpus_id] = score
 
-            print(f"  Loaded {len(df)} qrels from {division}.tsv ({len(qrels_by_division[division])} queries)")
+            print(f"  Loaded {len(df)} qrels from HuggingFace {division}.tsv ({len(qrels_by_division[division])} queries)")
 
         except Exception as e:
             print(f"  Warning: Could not load qrels/{division}.tsv: {e}")

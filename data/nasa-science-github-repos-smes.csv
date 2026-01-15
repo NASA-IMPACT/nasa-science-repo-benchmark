@@ -1,0 +1,220 @@
+id,question,url,division
+1,How do I create PDS labels?,"['github.com/NASA-AMMOS/labelocity', 'github.com/NASA-PDS/PLAID', 'github.com/NASA-PDS/mi-label']",Planetary
+2,"How do I create a simulated mission, from start to end?","['github.com/NASA-AMMOS/aerie-mission-model-template', 'github.com/NASA-AMMOS/aerie-multimission-models-bb', 'github.com/NASA-AMMOS/aerie-simple-model-data', 'github.com/NASA-AMMOS/aerie-simple-model-power', 'github.com/NASA-AMMOS/multi-mission-utilities-DSN']",Planetary
+3,Is my work compliant and ready to be uploaded to the PDS?,"['github.com/NASA-PDS/data-upload-manager', 'github.com/NASA-PDS/harvest']",Planetary
+4,Provide Jupyter notebook examples illustrating the use of astronomical mosaic images with Montage.,"['github.com/Caltech-IPAC/MontageMosaics', 'github.com/Caltech-IPAC/MontageNotebooks']",Astro
+5,Provide Python examples for analysis of Fermi data.,"['github.com/fermi-lat/AnalysisThreads', 'github.com/ranieremenezes/easyFermi', 'github.com/jlenain/flaapluc', 'github.com/gammapy/enrico', 'github.com/fermi-lat/FermiBottle', 'github.com/USRA-STI/gdt-fermi', 'github.com/Fermipy/fermipy', 'github.com/kristiantcho/flashcurve']",Astro
+6,Provide Python package for the Fermi-GBM Targeted Search and Gamma-ray Targeted Search (GTS).,"['github.com/USRA-STI/gamma-ray-targeted-search', 'github.com/USRA-STI/gdt-core', 'github.com/fermi-lat/FermiBottle', 'github.com/USRA-STI/gdt-fermi', 'github.com/Fermipy/fermipy', 'github.com/kristiantcho/flashcurve']",Astro
+7,Provide Workshop Tutorials from the AAS meetings.,"['github.com/NASA-NAVO/aas_workshop_2018', 'github.com/NASA-NAVO/aas_workshop_2018_summer', 'github.com/NASA-NAVO/aas_workshop_2019_winter', 'github.com/NASA-NAVO/aas_workshop_2020_winter', 'github.com/NASA-NAVO/navo-workshop']",Astro
+8,Provide a Jupyter notebook example illustrating the use of Firefly.,"['github.com/Caltech-IPAC/firefly-workshop', 'github.com/Caltech-IPAC/firefly_client', 'github.com/Caltech-IPAC/jupyter_firefly_extensions']",Astro
+9,Provide a Python tool for checking transit signals in Kepler monitoring data.,"['github.com/SSDataLab/vetting', 'github.com/nasa/K2CE', 'github.com/DJArmstrong/TransitSOM', 'github.com/lightkurve/lightkurve', 'github.com/PlanetHunters/watson']",Astro
+10,Provide a tool that can be used to model Point Spread Functions (PSFs).,"['github.com/SSDataLab/psfmachine', 'github.com/punch-mission/paper-variable-point-spread-functions', 'github.com/djones1040/PythonPhot', 'github.com/rmjarvis/Piff', 'github.com/aboucaud/pypher', 'github.com/SSDataLab/psfmachine']",Astro
+11,What Python package can be used to find papers in the Astrophysics Data System (ADS)?,"['github.com/NASADatanauts/ADSlabels', 'github.com/andycasey/ads']",Astro
+12,What tools can be used to establish  monitoring services for servicemon?,"['github.com/NASA-NAVO/AWS_servicemon', 'github.com/NASA-NAVO/servicemon-orig']",Astro
+13,How can I track movement and velocity of glaciers using satellite observations?,"['github.com/nasa-jpl/autoRIFT', 'github.com/nasa-jpl/its_live', 'github.com/nasa-jpl/its_live_production']",Earth
+14,How do I find and locate Earth science datasets across multiple NASA archives?,"['github.com/nasa/Common-Metadata-Repository', 'github.com/nasa/pyCMR', 'github.com/nasa/python_cmr']",Earth
+15,How do I orchestrate large-scale processing pipelines for Earth observation datasets?,"['github.com/nasa/cumulus', 'github.com/nasa/cumulus-dashboard']",Earth
+16,Is there a way to create dynamic map tiles from geospatial raster datasets?,"['github.com/nasa-gibs/rio-tiler', 'github.com/nasa-jpl/tiledwms']",Earth
+17,What services help me search for satellite data using geographic boundaries and time ranges?,"['github.com/nasa/cmr-graphql', 'github.com/nasa/cmr-opensearch']",Earth
+18,What toolkit would help me determine asteroid future locations? What minor planets will be in my filed of view for my telescope observations?,['github.com/Caltech-IPAC/kete'],Planetary
+19,How is the traction for a rover in sandy conditions?,['github.com/JPLMLIA/Barefoot_Rover'],Planetary
+20,What was the specific commands for NEAScout to collect data?,['github.com/JPLMLIA/NEAScout-Science'],Planetary
+21,"What organic molecule biosignatures were detected with OCEANS in the latest water sample colletion from ""blank""?",['github.com/JPLMLIA/OWLS-Autonomy'],Planetary
+22,Are there any target locations in this collection of data that are unique to either this area or Mars as a whole that would warrant a second look and further analysis?,['github.com/JPLMLIA/mastcam-noveltydet'],Planetary
+23,Is there a way to see overlapping data from different Mars orbiters for a specific location?,['github.com/JPLMLIA/pdsc'],Planetary
+24,How do I convert lunar DTMs into 3D visulaization?,['github.com/NASA-AMMOS/3DTilesRendererJS'],Planetary
+25,How do I create map-projected mosaiscs from CRISM data?,['github.com/NASA-AMMOS/AFIDS-POMM'],Planetary
+26,How do I render an image taken by Curiosity and overlay its viewing geometery in a 3D scene?,['github.com/NASA-AMMOS/CameraModelUtilsJS'],Planetary
+27,How do I stitch these rover snapshot images together to make a larger image of the martian landscape?,['github.com/NASA-AMMOS/Landform'],Planetary
+28,How do I create an ineractive layer data set to visualize permenantly shadowed regions on the Moon?,['github.com/NASA-AMMOS/MGViz'],Planetary
+29,How can I display terrain maps with illumination models for the lunar south pole?,['github.com/NASA-AMMOS/MMGIS'],Planetary
+30,What time on Mars did Curiosity drill the Cumberland sample? ,['github.com/NASA-AMMOS/MMTC'],Planetary
+31,I have multiple images from different Mars orbiters. How do I combine them together to make a single image?,['github.com/NASA-AMMOS/VICAR'],Planetary
+32,How can I get started modeling simulated spacecraft activitites?,['github.com/NASA-AMMOS/aerie-mission-model-template'],Planetary
+33,How do I create PDS4 metadata labels?,['github.com/NASA-AMMOS/labelocity'],Planetary
+34,How can I archieve PDS data?,['github.com/NASA-PDS/deep-archive'],Planetary
+35,How do I bundle all of my data sets together and create a DOI for my publication?,['github.com/NASA-PDS/doi-service'],Planetary
+36,How do I bundle SPICE kernels of Europa Clipper's trajectory during a flyby of Eruropa?,['github.com/NASA-PDS/naif-pds4-bundler'],Planetary
+37,What Python package can be used to convert ADQL Sky data to SQL database?,['github.com/Caltech-IPAC/ADQL'],Astro
+38,What API library can be used to get access to the NASA Exoplanet Archival data of the Kepler Mission?,['github.com/Caltech-IPAC/Kepler-Discoveries'],Astro
+39,What toolkit can be used to build a single mosaic FITS file image from multiple FITS images files?,['github.com/Caltech-IPAC/Montage'],Astro
+40,Provide Jupyter notebook examples illustrating the use of astronomical mosaic images with MontagePy.,['github.com/Caltech-IPAC/MontageMosaics'],Astro
+41,Provide a spatial indexing library for the use with Database Management Systems (DBMSs) of astronomical data.,['github.com/Caltech-IPAC/SpatialIndex'],Astro
+42,Provide a Jupyter notebook example for creating Cutouts of TESS coadded images in Python.,['github.com/Caltech-IPAC/TESSCoadds'],Astro
+43,Provide a Web-based API library for accessing and visualizing astronomical archival data.,['github.com/Caltech-IPAC/firefly'],Astro
+44,Provide an NPM module for accessing Firefly API to get and visualize astronomical archival data.,['github.com/Caltech-IPAC/firefly-api-access'],Astro
+45,Provide a Jupyter notebook example illustrating the use of Firefly in Python.,['github.com/Caltech-IPAC/firefly-workshop'],Astro
+46,Provide a Python API package for accessing Firefly API to get and visualize astronomical archival data.,['github.com/Caltech-IPAC/firefly_client'],Astro
+47,What Python pipeline package can be used to get andf process data from Keck HIRES PRV?,['github.com/Caltech-IPAC/hiresprv'],Astro
+48,Provide a Jupyter exmaple for rendering FITS file and displaying tables and images using the package Firefly.,['github.com/Caltech-IPAC/jupyter_firefly_extensions'],Astro
+49,What Python package can be used to establish a Table Access Protocol (TAP) Server for ADQL Database?,['github.com/Caltech-IPAC/nexsciTAP'],Astro
+50,What Python package can be used to provide access to the NEID Archive (neid.ipac.caltech.edu)?,['github.com/Caltech-IPAC/pyNEID'],Astro
+51,"Provide a pipeline code for the use of dax_butler, theRubin/LSST Gen3 Butler and PipelineTask framework in SPHEREx?",['github.com/Caltech-IPAC/spherex_butler_poc'],Astro
+52,What Python package can be used to configure AWS EC2 for establishing NAVO servicemon Virtual Observatory (VO) queries?,['github.com/NASA-NAVO/AWS_servicemon'],Astro
+53,What Python package can be used to support NAVO servicemon Virtual Observatory (VO) services?,['github.com/NASA-NAVO/aas_workshop_2018'],Astro
+54,What Python package can be used to make monitoring services?,['github.com/NASA-NAVO/servicemon-orig'],Astro
+55,What Python package can be used to find papers in the Astrophysics Data System with ML/NLP?,['github.com/NASADatanauts/ADSlabels'],Astro
+56,"Provide a Python tool that can be used to create models of instrument effective Point Spread Functions (PSFs),",['github.com/SSDataLab/psfmachine'],Astro
+57,Provide a Python package for correcting backgroud scattered lights in TESS FFLs.,['github.com/SSDataLab/tess-backdrop'],Astro
+58,"Provide a Python tool for chelcking transit signals in Kepler, K2 and TESS monitoring data.",['github.com/SSDataLab/vetting'],Astro
+59,Provide a Python package for the Fermi-GBM Targeted Search and Gamma-ray Targeted Search (GTS).,['github.com/USRA-STI/gamma-ray-targeted-search'],Astro
+60,Provide some Python examples showing step-by-step guides on analysis of Fermi data.,['github.com/fermi-lat/AnalysisThreads'],Astro
+61,"The code could be non astro, while used by Hydrogen Epoch of Reionization Array (HERA), since it tracks all of the primary data products stored at a given site.",['github.com/hera-team/librarian'],Astro
+62,What tool can verify if web service endpoints in my data catalog are still accessible and working,['github.com/NASA-IMPACT/DCD-Tool'],Earth
+63,How can I build a mobile app that displays NASA satellite videos and allows users to analyze imagery on smartphones,['github.com/NASA-IMPACT/EIC-Mobile'],Earth
+64,What system can automatically monitor the health status of my geospatial web services and send alerts when they're down?,['github.com/NASA-IMPACT/FGDC_servicelist_GP'],Earth
+65,Where can I find hands-on tutorials for training AI models on satellite data using Amazon Web Services?,['github.com/NASA-IMPACT/HDCRS-school-2024'],Earth
+66,How can I create a web interface to monitor the progress of large file transfers in real-time?,['github.com/NASA-IMPACT/HLS-Data-Transfer-Dashboard'],Earth
+67,What workshop materials are available for learning to apply machine learning to geospatial datasets?,['github.com/NASA-IMPACT/IGARSS-tutorial-2024'],Earth
+68,Is there a system that can generate GIS analysis code automatically when I describe what I want in plain English?,['github.com/NASA-IMPACT/LLM-Geo'],Earth
+69,What pre-trained model can analyze sequences of satellite images to understand changes over time?,['github.com/NASA-IMPACT/Prithvi-EO-2.0'],Earth
+70,How can I use a transformer-based neural network to process and predict weather patterns from meteorological data?,['github.com/NASA-IMPACT/Prithvi-WxC'],Earth
+71,What service can validate the quality and completeness of metadata descriptions for my satellite datasets,['github.com/NASA-IMPACT/QuARC'],Earth
+72,How can I build an interactive table interface where multiple users can explore disaster risk maps simultaneously,['github.com/NASA-IMPACT/Touch-Table-Visualization'],Earth
+73,Where can I find standardized test datasets to evaluate how well my AI model performs on weather prediction tasks?,['github.com/NASA-IMPACT/WxC-Bench'],Earth
+74,What database system can help researchers discover and access information about past and ongoing airborne science missions?,['github.com/NASA-IMPACT/admg-casei'],Earth
+75,How can I automatically process and organize navigation data collected during aircraft research flights?,['github.com/NASA-IMPACT/casei-data-pipeline'],Earth
+76,What system helps maintain consistency between climate datasets listed on Data.gov and their actual availability?,['github.com/NASA-IMPACT/cdi_master'],Earth
+77,How can I efficiently import large volumes of satellite metadata records into a PostgreSQL database for searching?,['github.com/NASA-IMPACT/cmr-pgstac-loader'],Earth
+78,What proxy service can make NASA's data catalog searchable using modern STAC API standards?,['github.com/NASA-IMPACT/cmr-stac-nncpp'],Earth
+79,How can I serve map tiles that show environmental changes visible from space during major global events?,['github.com/NASA-IMPACT/covid-api'],Earth
+80,What web platform can display how human activities affect the environment as seen by satellites?,['github.com/NASA-IMPACT/covid-dashboard'],Earth
+81,How can I use hyperspectral satellite data to detect and map harmful algae blooms in water bodies?,['github.com/NASA-IMPACT/csda-piney-point-waterquality'],Earth
+82,What command-line tool can help me download hundreds of satellite images that I've ordered from a data provider?,['github.com/NASA-IMPACT/csdap-bulk-download'],Earth
+83,How can I set up an AWS-based system to automatically process and catalog incoming satellite imagery,['github.com/NASA-IMPACT/csdap-cumulus'],Earth
+84,What tool can generate temporary access credentials for users to securely download large files from cloud storage?,['github.com/NASA-IMPACT/csdap-delivery-auth'],Earth
+85,How can I manage and monitor my distributed satellite data processing workflows from the command line?,['github.com/NASA-IMPACT/cumulus-cli'],Earth
+86,What template can I use to quickly build a REST API that serves map tiles and geospatial data for web applications?,['github.com/NASA-IMPACT/dashboard-api-starter'],Earth
+87,How can I automatically generate configuration files for my web dashboard from a collection of dataset definitions?,['github.com/NASA-IMPACT/dashboard-datasets-starter'],Earth
+88,Where can I find labeled training data showing different types of clouds and atmospheric phenomena for computer vision?,['github.com/NASA-IMPACT/data_share'],Earth
+89,What automated system can ensure my climate data portal maintains consistent dataset listings and working links?,['github.com/NASA-IMPACT/dcd-CAP'],Earth
+90,How can I quickly build a web application for exploring and visualizing satellite imagery collections?,['github.com/NASA-IMPACT/earthdata-dashboard-starter'],Earth
+91,What service can automatically refresh authentication tokens to prevent data access interruptions?,['github.com/NASA-IMPACT/edl-credential-rotation'],Earth
+92,How can I prototype a backend service for delivering Earth science data through web-based visualization tools?,['github.com/NASA-IMPACT/eis-pilot-dashboard-api'],Earth
+93,What experimental system can help organize scientific datasets for display in interactive web applications,['github.com/NASA-IMPACT/eis-pilot-dashboard-datasets'],Earth
+94,"How can I create a demonstration platform for interactive exploration of satellite and sensor data?",['github.com/NASA-IMPACT/eis-pilot-eathdata-dashboard'],Earth
+95,What Python libraries can help me work with metadata from Earth observation satellites and validate its quality?,['github.com/NASA-IMPACT/eo-metadata-tools'],Earth
+96,"How can I deploy a complete API stack that provides search, map tiles, and vector data access for satellite imagery?",['github.com/NASA-IMPACT/eoAPI'],Earth
+97,What containerized environment includes all the dependencies needed for processing Landsat satellite images?,['github.com/NASA-IMPACT/espa-dockerfiles'],Earth
+98,What libraries can convert satellite image data between different file formats used by various processing systems?,['github.com/NASA-IMPACT/espa-product-formatter'],Earth
+99,How can I read and manipulate ENVI headers and XML metadata files from satellite imagery in Python?,['github.com/NASA-IMPACT/espa-python-library'],Earth
+100,What algorithms can remove atmospheric effects from satellite measurements to get accurate surface reflectance values?,['github.com/NASA-IMPACT/espa-surface-reflectance'],Earth
+101,How can I train a neural network to predict atmospheric gravity wave patterns and momentum fluxes from meteorological data?,['github.com/NASA-IMPACT/gravity-wave-finetuning'],Earth
+102,Is there a tool that converts intermediate Landsat surface reflectance data into standard map tiles for spatial analysis?,['github.com/NASA-IMPACT/hls-landsat-tile'],Earth
+103,Is there a tool for processing HLS satellite scenes into AWS stacks for both historic and streaming workflows?,['github.com/NASA-IMPACT/hls-lpdaac'],Earth
+104,How can I compare satellite product inventories across different sources to reconcile missing or inconsistent data automatically?,['github.com/NASA-IMPACT/hls-lpdaac-orchestration'],Earth
+105,How can I automatically check and report inconsistencies between different satellite data inventories for the same time periods?,['github.com/NASA-IMPACT/hls-lpdaac-reconciliation'],Earth
+106,What tool can convert satellite mask files from JP2 format into ENVI format for easier analysis?,['github.com/NASA-IMPACT/hls-mask_jp2_to_envi'],Earth
+107,How can I automatically generate standardized metadata files for satellite imagery products to share with data catalogs?,['github.com/NASA-IMPACT/hls-metadata'],Earth
+108,Where can I find a tool to automatically download and manage historical Sentinel-2 imagery from European data services with options to push files to cloud storage?,['github.com/NASA-IMPACT/hls-onda-s2-downloader'],Earth
+109,How can I automatically set up and manage a cloud-based pipeline for processing satellite data with AWS services?,['github.com/NASA-IMPACT/hls-orchestration'],Earth
+110,Where can I find an overview of all the components involved in building a global cloud-based pipeline for producing harmonized Landsat and Sentinel satellite products?,['github.com/NASA-IMPACT/hls-project'],Earth
+111,How can I generate harmonized Sentinel-2 satellite products using a containerized workflow that runs on cloud infrastructure?,['github.com/NASA-IMPACT/hls-sentinel'],Earth
+112,What cloud-based tool can I deploy to automatically fetch Sentinel-2 imagery from Copernicus and upload it to Amazon S3 for processing?,['github.com/NASA-IMPACT/hls-sentinel2-downloader'],Earth
+113,How can I set up a serverless system on AWS to automatically download and manage Sentinel-2 imagery from Copernicus and SciHub into cloud storage?,['github.com/NASA-IMPACT/hls-sentinel2-downloader-serverless'],Earth
+114,How can I view a live dashboard showing the health and processing metrics of a satellite data pipeline?,['github.com/NASA-IMPACT/hls-status'],Earth
+115,Is there a tool that can automatically create quick-look thumbnail images from large satellite data products for easier browsing?,['github.com/NASA-IMPACT/hls-thumbnails'],Earth
+116,"What set of Python tools can help me handle common preprocessing tasks like masking, metadata checks, and file conversions for Landsat and Sentinel satellite data?",['github.com/NASA-IMPACT/hls-utilities'],Earth
+117,How can I automatically generate vegetation index layers like NDVI from harmonized Landsat and Sentinel satellite products?,['github.com/NASA-IMPACT/hls-vi'],Earth
+118,How can I set up an automated system to process historical satellite imagery and generate vegetation indices at scale?,['github.com/NASA-IMPACT/hls-vi-historical-orchestration'],Earth
+119,How can I explore and visualize emission plumes interactively on a map to understand pollution dispersion over time?,['github.com/NASA-IMPACT/interactive-emission-plumes'],Earth
+120,How can I automatically download and update the auxiliary data needed for running the LASRC atmospheric correction algorithm?,['github.com/NASA-IMPACT/lasrc-auxiliary'],Earth
+121,How can I use deep learning with commercial satellite imagery to automatically detect floating plastic and debris in ocean scenes?,['github.com/NASA-IMPACT/marine_debris_ML'],Earth
+122,What open-source server can I deploy to serve map tiles (MBTiles) for interactive visualization of geospatial data?,['github.com/NASA-IMPACT/mbtileserver'],Earth
+123,What framework can I adopt to set up project-specific science data governance and management policies that align with open data mandates and best practices?,['github.com/NASA-IMPACT/modern-dgf'],Earth
+124,"What tool provides a web-interface for authoring, publishing, and maintaining scientific algorithm documentation for Earth science?",['github.com/NASA-IMPACT/nasa-apt-frontend'],Earth
+125,"What tool can I use to build a modern website for government content that supports storytelling, maps, and interactive visual components?",['github.com/NASA-IMPACT/next-earth-gov'],Earth
+126,What front-end framework offers a clean way to build geospatial story pages and visual data dashboards using USWDS style with React/Next.js?,['github.com/NASA-IMPACT/next-veda-ui'],Earth
+127,What tool helps with setting up and deploying a NASA-NOAA Cumulus data ingestion stack with custom workflows and infrastructure?,['github.com/NASA-IMPACT/nncpp-cumulus-deploy'],Earth
+128,"What API can I use to serve metadata, timelapse and dataset endpoints so I can build a dashboard of Earth-data resources?",['github.com/NASA-IMPACT/nncpp-dashboard-api'],Earth
+129,What API or dashboard service gives me access to endpoint(s) listing and filtering available Earth-observation datasets for visualization and analysis?,['github.com/NASA-IMPACT/nncpp-dashboard-datasets'],Earth
+130,What dashboard can I use to explore Earth satellite imagery and raster visualizations via a simple web-interface for public data?,['github.com/NASA-IMPACT/nncpp-earthdata-dashboard'],Earth
+131,What registry lists publicly accessible datasets hosted on AWS so that I can find data I can analyze without first downloading everything?,['github.com/NASA-IMPACT/open-data-registry'],Earth
+132,What tool can I use to train a model to detect specific pixel-level features in Earth observation or science imagery when I dont know what anomalies to expect?,['github.com/NASA-IMPACT/pixel-detector'],Earth
+133,What tool can I use to draw the flight or path trajectories of various platforms used in NASA campaigns to display on a map catalog?,['github.com/NASA-IMPACT/platform-visualization'],Earth
+134,What workshop materials show me how to fine-tune geospatial foundation models using cloud notebooks and satellite burn scar datasets?,['github.com/NASA-IMPACT/prithvi-global-workshop'],Earth
+135,"What tool can I use to evaluate and flag quality issues, gaps, or inconsistencies in Earth-observation metadata hosted in a large catalog like NASAs CMR?",['github.com/NASA-IMPACT/pyQuARC'],Earth
+136,What tool can I use to convert metadata from Esri map/image services into STAC format so ArcGIS services are discoverable alongside open STAC catalogs?,['github.com/NASA-IMPACT/pyarc2stac'],Earth
+137,What library helps me quickly generate map tiles or previews from large raster files hosted locally or in the cloud?,['github.com/NASA-IMPACT/rio-tiler'],Earth
+138,What resources are available to set up AI workflows for remote sensing in hackathons using SageMaker and TerraTorch?,['github.com/NASA-IMPACT/rsds-hackathon-24'],Earth
+139,"What repository contains evidence, articles, and case studies demonstrating the impact and value of satellite data solutions endorsed by working groups?",['github.com/NASA-IMPACT/snerf'],Earth
+140,What repository contains example use-cases and impact stories showing how Earth observation solutions deliver value and societal benefits?,['github.com/NASA-IMPACT/snwg-sep-solution-value-repository'],Earth
+141,"What resources exist to help me take part in a satellite imagery ""phenomena detection"" challenge, including example code, labeled imagery, and imagery download tools",['github.com/NASA-IMPACT/space-apps'],Earth
+142,"What tool allows administrators to manage and configure collections, access rights, and metadata in a STAC catalog via a user interface?",['github.com/NASA-IMPACT/stac-admin'],Earth
+143,What tool can I use to convert CMIP6 climate model outputs into STAC-formatted metadata for easier cataloging and discovery?,['github.com/NASA-IMPACT/stactools-cmip6'],Earth
+144,"What open resources exist to learn about Earth science data processing, remote sensing, and practical workflows via hands-on materials from a summer school program?",['github.com/NASA-IMPACT/summer-school-2023'],Earth
+145,What server can I use to serve dynamic map tiles from Cloud-Optimized GeoTIFFs and STAC assets via a web API?,['github.com/NASA-IMPACT/titiler'],Earth
+146,What tool lets me interactively map and compare spatial datasets across multiple linked map panels (e.g. showing different metrics or regions side by side)?,['github.com/NASA-IMPACT/touchmap-veda-data'],Earth
+147,"What app lets me explore real-time fire detections, perimeters, and fireline fronts to understand wildfire progression on an interactive map?",['github.com/NASA-IMPACT/us-fire-events-tool'],Earth
+148,What infrastructure code lets me deploy a user-friendly STAC catalog browser front-end for exploring Earth-observation metadata?,['github.com/NASA-IMPACT/veda-STAC-browser'],Earth
+149,"What tool can I use to detect and monitor supraglacial lakes via AI segmentation on satellite or aerial imagery?",['github.com/NASA-IMPACT/veda-ai-supraglacial_segmentation'],Earth
+150,What tool provides a backend system for managing a spatial-temporal asset catalog with APIs and tile serving for Earth science data discovery and visualization?,['github.com/NASA-IMPACT/veda-backend'],Earth
+151,"What template repository can I use to configure and customize my data-dashboard sites datasets, stories, styling and layout?",['github.com/NASA-IMPACT/veda-config'],Earth
+152,"What repo provides configuration and content for a VEDA UI instance tailored to Earth.gov, including datasets, stories, styles, and layout?",['github.com/NASA-IMPACT/veda-config-disasters'],Earth
+153,What tool lets me explore and interact with emission plume data in a mapping dashboard format to understand spatial and temporal changes?,['github.com/NASA-IMPACT/veda-interactive-emission-plumes'],Earth
+154,"What tool lets me interactively explore, map, and analyze wildfire detections and perimeters to make sense of fire behavior over time?",['github.com/NASA-IMPACT/veda-interactive-fire'],Earth
+155,"What workshop helps researchers learn how to find, access, and analyze ECOSTRESS v2 satellite data in the cloud using tools like Earthdata, xarray, and S3 direct file access?",['github.com/NASA-Openscapes/2022-ECOSTRESS-Cloud-Workshop'],Earth
+156,"What tools and examples can show me how to use remote sensing data (snow, glaciers, permafrost) in the High Mountain Asia region for environmental change studies?",['github.com/NASA-Planetary-Science/HiMAT'],Earth
+157,"What tool can I use to process and analyze ocean-model output over the pan-Arctic domain, converting binary ECCO datasets into NetCDF/Zarr and run diagnostic analyses?",['github.com/NASA-SASSIE/SASSIE-model'],Earth
+158,What pipeline lets me work with satellite-derived or in-situ salinity & stratification data to monitor sea surface freshwater anomalies and ice-edge effects?,['github.com/NASA-SASSIE/SASSIE-satellite'],Earth
+159,What tool helps me package field campaign observations into NetCDF files with proper metadata so they can be archived and shared?,['github.com/NASA-SASSIE/SASSIE_data'],Earth
+160,What tool helps me align and compare in-situ observations with matching satellite measurements (e.g. sea surface salinity from field sensors vs satellite data)?,['github.com/NASA-SASSIE/collocation'],Earth
+161,"What tools allow me to fetch field-observation data, produce overview plots, and export those data to spreadsheets for environmental study?",['github.com/NASA-SASSIE/insitu'],Earth
+162,"What tool lets me load, manipulate, and visualize satellite datasets like sea-ice or SMAP in notebooks for environmental research?",['github.com/NASA-SASSIE/satellite'],Earth
+163,How can I access and query a database of spacecraft material outgassing rates to evaluate contamination effects on missions?,['github.com/NASADatanauts/JasonsOutgassingDBClient'],Earth
+164,Is there a visualization that shows Earths position from different planets and spacecraft to illustrate the pale blue dot perspective?,['github.com/NASADatanauts/PaleBlueDot'],Earth
+165,"Where can I find an interactive map that displays natural events like storms, fires, and volcanic activity from NASAs EONET feed?",['github.com/NASADatanauts/eonet-map'],Earth
+166,What open-source JavaScript library lets me build 3D virtual globes and interactive maps directly in the browser?,['github.com/NASAWorldWind/WebWorldWind'],Earth
+167,How can I build Android apps that render 3D globes and display geographic or scientific data layers interactively?,['github.com/NASAWorldWind/WorldWindAndroid'],Earth
+168,What Java SDK lets me create desktop applications with 3D Earth visualization and overlays of geospatial data?,['github.com/NASAWorldWind/WorldWindJava'],Earth
+169,How can I classify and map different land cover types across large areas using remote sensing data and cloud or local compute?,['github.com/SERVIR-Amazonia/VegMapper'],Earth
+170,"Where can I find tools to monitor water levels, forecast floods, and view historical hydrology via web apps in Colombia?",['github.com/SERVIR-Amazonia/colombia-tethys-apps'],Earth
+171,Is there a model that can predict fire risk or probability in the Colombian Amazon using past climate and forest loss data?,['github.com/SERVIR-Amazonia/fire-forecasting-colombia'],Earth
+172,How can I compare and inspect the quality and coverage of GEDI data between LPDAAC and Earth Engine for a given area of interest?,['github.com/SERVIR-Amazonia/gedi-inspect'],Earth
+173,"What project maps land cover and land use for Imbabura, Ecuador using both optical and radar satellite imagery despite persistent cloud cover?",['github.com/SERVIR-Amazonia/imbabura'],Earth
+174,What scripts exist for monitoring mining activity in the Peruvian Amazon using remote sensing or GIS data?,['github.com/SERVIR-Amazonia/rami-peru'],Earth
+175,Where can I get example Google Earth Engine scripts used for training sessions in the Dominican Republic?,['github.com/SERVIR-Amazonia/republica-dominicana'],Earth
+176,"How can I automate the download, processing, and analysis of Sentinel-1 radar imagery regularly for monitoring land or environmental change?",['github.com/SERVIR-Amazonia/sentinel-1-pipeline'],Earth
+177,What machine learning tools can I use to build predictive models for environmental variables (like deforestation or water quality) in the Amazon region?,['github.com/SERVIR-Amazonia/servir-amazonia-ml'],Earth
+178,Is there a way to map forest cover loss or land use change in Colombia using local satellite imagery and open data tools?,['github.com/SERVIR-Amazonia/sinchi-cobertura'],Earth
+179,Where can I get training modules or example workflows for using remote sensing and geospatial tools applied to Surinames forests and environment?,['github.com/SERVIR-Amazonia/suriname-training'],Earth
+180,What datasets and tools are available for studying snowpack structure and melt timing in mountainous regions?,['github.com/SnowEx/GSR2'],Earth
+181,How can I visualize and analyze snow pit measurements to understand snow density layers and physical properties?,['github.com/SnowEx/snowpits'],Earth
+182,What framework helps compare snow model outputs with physical snow observations for validation of snowpack behavior?,['github.com/SnowEx/spicy-snow'],Earth
+183,What Python tools exist for working with UAVSAR radar data to analyze surface deformation or changes over time?,['github.com/SnowEx/uavsar_pytools'],Earth
+184,How can I process UAVSAR data specifically for snow cover and snow melt monitoring?,['github.com/SnowEx/uavsar_snow'],Earth
+185,What client for submitting acquisition schedules or queries to satellite or airborne data acquisition systems?,['github.com/aria-jpl/acq_enumerator_submitter'],Earth
+186,Is there a pipeline to process ALOS-2 radar data into Analysis Ready Products for applications like InSAR or surface deformation?,['github.com/aria-jpl/alos2app_pge'],Earth
+187,How can I register and manage Areas of Interest (AOIs) automatically for scheduling satellite observations or data retrieval?,['github.com/aria-jpl/aoi_enumerator_submitter'],Earth
+188,"What website shows the ARIA projects public documentation, updates, and resources?",['github.com/aria-jpl/aria-jpl.github.io'],Earth
+189,How can I monitor and visualize surface deformation using ARIAs Advanced Rapid Imaging and Analysis tools in a browser?,['github.com/aria-jpl/ariamh'],Earth
+190,What tool lets me query SAR/INSAR datasets from the Alaska Satellite Facility using ARIA filters?,['github.com/aria-jpl/asf-query'],Earth
+191,Is there a service for ensuring reliable data transfers between ARIA and ASF data storage when new SAR products arrive?,['github.com/aria-jpl/asf_sns_handshaking'],Earth
+192,What script can scrape radar acquisition metadata (SAR catalog) for Boston or other AOIs from open sources?,['github.com/aria-jpl/bos_sarcat_scraper'],Earth
+193,How can I collect or list coseismic interferograms or SLC pairs automatically following an earthquake?,['github.com/aria-jpl/coseismic_enumerator'],Earth
+194,Where can I find pipelines that generate coseismic displacement maps (from SAR interferometry) after seismic events?,['github.com/aria-jpl/coseismic_product'],Earth
+195,What tool joins USGS/NEIC earthquake event data with coseismic displacement products to map ground movement?,['github.com/aria-jpl/coseismic_usgs_neic'],Earth
+196,How can I assess how well satellite-derived coseismic displacement products match USGS event data?,['github.com/aria-jpl/coseismic_usgs_neic_evaluator'],Earth
+197,What backend can serve time-series of ground displacement for regions after earthquakes for visualization or analysis?,['github.com/aria-jpl/displacement-ts-server'],Earth
+198,How do I define infrastructure as code to deploy a displacement time-series server on cloud platforms?,['github.com/aria-jpl/displacement-ts-server-terraform'],Earth
+199,"Where can I get tutorials, API specs, or workflows for ARIA tools and products?",['github.com/aria-jpl/docs'],Earth
+200,What toolkit helps produce large scale InSAR time-series analyses across many radar scenes over years?,['github.com/aria-jpl/giant_time_series'],Earth
+201,What are tools to extract small image patches (stamps) around detected deformation events from InSAR stacks for further analysis?,['github.com/aria-jpl/isce_stamps_processing'],Earth
+202,"How can I forecast where landslides are likely to occur using satellite terrain, rainfall, and geologic indicators?",['github.com/aria-jpl/landslide-predictor'],Earth
+203,Is there a lightweight model to predict landslide susceptibility using minimal inputs?,['github.com/aria-jpl/landslide-predictor-basic'],Earth
+204,What alternative approach exists for landslide prediction with different or simpler features?,['github.com/aria-jpl/landslide-predictor-basic-alt'],Earth
+205,How can I push geospatial tiles or layers into a Leaflet map dynamically from local or cloud sources?,['github.com/aria-jpl/leaflet-ingester'],Earth
+206,What simple tool can generate water masks from optical or radar imagery without large computational overhead?,['github.com/aria-jpl/lightweight_water_mask'],Earth
+207,How can I produce persistent scatterer or small baseline InSAR deformation maps using MintPy in a production environment?,['github.com/aria-jpl/mintpy-pge'],Earth
+208,"What client library allows me to query ARIAs data services for assets, metadata, and deformation products?",['github.com/aria-jpl/mozart-client'],Earth
+209,Is there a tool to assess vegetation cover or greenness using Sentinel-1 backscatter data over agricultural regions?,['github.com/aria-jpl/s1-gcov-plant'],Earth
+210,What pipeline ingests Sentinel-1 scenes and performs quality checks before adding them to analysis workflows?,['github.com/aria-jpl/s1_qc_ingest'],Earth
+211,Where can I find a script that tracks new Sentinel-data acquisitions from SciHub for areas of interest?,['github.com/aria-jpl/scihub_acquisition_scraper'],Earth
+212,Is there a converter to turn Sentinel-1 or other SAR coherence products (slcp) into colormap files (COD) usable in GIS?,['github.com/aria-jpl/slcp2cod'],Earth
+213,How can I transform sparse coherence (slcp) products into dense coherence (COR) representations for change detection?,['github.com/aria-jpl/slcp2cor'],Earth
+214,What tool converts sparse coherence to phase metrics (PM) for interferometric or change-analysis workflows?,['github.com/aria-jpl/slcp2pm'],Earth
+215,At what Earth time will both Odyssey and MRO be over Gale Crater within 10 minutes of each other?,"['github.com/NASA-AMMOS/MMTC', 'github.com/NASA-AMMOS/timecraftjs']",Planetary
+216,"Which HiRISE or CTX images cover the floor of Gale Crater, and what are their associated pixel scale and emission angle metadata?","['github.com/NASA-PDS/atlas', 'github.com/NASA-PDS/pds4-jparser']",Planetary
+217,How do changes in a planets gravity field over time inform our understanding of its interior structure and dynamics?,"['github.com/NASA-PDS/PyTrk234', 'github.com/NASA-Planetary-Science/PlanetProfile']",Planetary
+218,"When was MRO observed by each DSN station during the 2018 global dust storm, and how did link geometry affect tracking quality?","['github.com/NASA-AMMOS/multi-mission-utilities-DSN', 'github.com/NASA-PDS/PyTrk234', 'github.com/nasa-jpl/MonteCop']",Planetary
+219,"From multi-pass tracking over Valles Marineris, detect persistent gravity anomalies and relate them to plausible crustal thickness contrasts.","['github.com/NASA-PDS/PyTrk234', 'github.com/NASA-Planetary-Science/PlanetProfile']",Planetary

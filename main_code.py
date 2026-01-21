@@ -1,15 +1,16 @@
+import os
+from typing import List, Dict, Any
+import pandas as pd
 import argparse
 from pathlib import Path
+from datasets import load_dataset, load_dataset_builder, get_dataset_config_names
+from pathlib import PurePosixPath
+from dotenv import load_dotenv
 from src.benchmark import format_results_table_by_category
 from src.metrics_v2 import evaluate_retrieval
 from src.visualize import create_comparison_plots
 from src.retrievers import BM25Retriever_V2 as BM25Retriever, EmbeddingRetriever
-from datasets import load_dataset, load_dataset_builder, get_dataset_config_names
-from pathlib import PurePosixPath
-from dotenv import load_dotenv
-import os
-from typing import List, Dict, Any
-import pandas as pd
+
 
 load_dotenv()
 

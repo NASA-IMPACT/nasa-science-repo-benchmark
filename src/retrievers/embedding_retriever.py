@@ -1,5 +1,6 @@
 """Embedding-based retriever implementation"""
 
+import os
 import pandas as pd
 import numpy as np
 from typing import Dict, List, Tuple
@@ -11,7 +12,7 @@ from .base_retriever import BaseRetriever
 class EmbeddingRetriever(BaseRetriever):
     """Dense embedding-based retrieval using sentence transformers."""
 
-    def __init__(self, model_name: str = 'all-MiniLM-L6-v2'):
+    def __init__(self, model_name: str = 'nasa-impact/indus-sde-st-v0.2', use_multi_gpu: bool = True):
         """
         Initialize embedding retriever.
 
@@ -19,9 +20,11 @@ class EmbeddingRetriever(BaseRetriever):
             model_name: Name of sentence-transformers model to use
         """
         print(f"Loading embedding model: {model_name}")
-        self.model = SentenceTransformer(model_name)
+        self.model = SentenceTransformer(model_name, token=os.getenv("HUGGINGFACE_TOKEN"))
         self.corpus_ids = None
         self.corpus_embeddings = None
+        self.query_embeddings = None
+        self.use_multi_gpu = use_multi_gpu
 
     def index(self, corpus_df: pd.DataFrame, text_column: str = 'text') -> None:
         """
@@ -37,14 +40,60 @@ class EmbeddingRetriever(BaseRetriever):
         texts = corpus_df[text_column].fillna('').astype(str).tolist()
 
         # Encode all documents
-        self.corpus_embeddings = self.model.encode(
-            texts,
-            show_progress_bar=True,
-            convert_to_numpy=True
-        )
+        if self.use_multi_gpu:
+            pool = self.model.start_multi_process_pool()
+            self.corpus_embeddings = self.model.encode_multi_process(
+                texts,
+                pool=pool,
+                batch_size=128,  # Adjust based on GPU memory
+                show_progress_bar=True,
+                chunk_size=1000  # Auto-calculate
+            )
+            self.model.stop_multi_process_pool(pool)
+        else:
+            self.corpus_embeddings = self.model.encode(
+                texts,
+                show_progress_bar=True,
+                convert_to_numpy=True
+            )
 
         print(f"Indexed {len(self.corpus_ids)} documents (embedding dim: {self.corpus_embeddings.shape[1]})")
 
+
+    def index_queries(self, queries_df: pd.DataFrame, text_column: str = 'text') -> None:
+        """
+        Pre-encode queries to embeddings for faster search.
+        
+        Args:
+            queries_df: DataFrame with '_id' and text_column
+            text_column: Column containing query text
+            use_multi_gpu: Whether to use multi-GPU encoding
+        """
+        print(f"Pre-encoding {len(queries_df)} queries...")
+        
+        self.query_ids = queries_df['_id'].tolist()
+        query_texts = queries_df[text_column].fillna('').astype(str).tolist()
+        
+        # Encode queries
+        if self.use_multi_gpu:
+            pool = self.model.start_multi_process_pool()
+            self.query_embeddings = self.model.encode_multi_process(
+                query_texts,
+                pool=pool,
+                batch_size=128,
+                show_progress_bar=True,
+                chunk_size=1000
+            )
+            self.model.stop_multi_process_pool(pool)
+        else:
+            self.query_embeddings = self.model.encode(
+                query_texts,
+                show_progress_bar=True,
+                convert_to_numpy=True
+            )
+        
+        print(f"Pre-encoded {len(self.query_ids)} queries (embedding dim: {self.query_embeddings.shape[1]})")
+        
     def search(
         self,
         queries_df: pd.DataFrame,
@@ -69,15 +118,14 @@ class EmbeddingRetriever(BaseRetriever):
         query_texts = queries_df['text'].fillna('').astype(str).tolist()
 
         # Encode queries
-        query_embeddings = self.model.encode(
-            query_texts,
-            show_progress_bar=True,
-            convert_to_numpy=True
-        )
+        if self.query_embeddings is not None and len(self.query_embeddings) == len(queries_df):
+            pass
+        else:
+            self.index_queries(queries_df)
 
         # Calculate cosine similarities
         print("Computing similarities...")
-        similarities = cosine_similarity(query_embeddings, self.corpus_embeddings)
+        similarities = cosine_similarity(self.query_embeddings, self.corpus_embeddings)
 
         # Get top-k for each query
         results = {}

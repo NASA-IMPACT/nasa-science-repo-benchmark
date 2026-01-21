@@ -45,7 +45,7 @@ class EmbeddingRetriever(BaseRetriever):
             self.corpus_embeddings = self.model.encode_multi_process(
                 texts,
                 pool=pool,
-                batch_size=128,  # Adjust based on GPU memory
+                batch_size=4,  # Adjust based on GPU memory
                 show_progress_bar=True,
                 chunk_size=1000  # Auto-calculate
             )
@@ -80,7 +80,7 @@ class EmbeddingRetriever(BaseRetriever):
             self.query_embeddings = self.model.encode_multi_process(
                 query_texts,
                 pool=pool,
-                batch_size=128,
+                batch_size=4,
                 show_progress_bar=True,
                 chunk_size=1000
             )

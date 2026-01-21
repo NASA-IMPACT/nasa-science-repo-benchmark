@@ -283,6 +283,73 @@ def run_benchmark_by_division(
 
     return results_df
 
+def format_results_table_by_category(
+    results_df: pd.DataFrame,
+    retriever_name: str = 'bm25',
+    embedding_model: str = None,
+    k_values: List[int] = None
+) -> str:
+    """
+    Format category-specific results as a nice table for display.
+
+    Args:
+        results_df: Results DataFrame with 'config_name' and 'category' columns
+        retriever_name: Name of retriever used ('bm25' or 'embedding')
+        embedding_model: Model name if using embedding retriever
+        k_values: K values to include in table
+
+    Returns:
+        Formatted table string
+    """
+    if k_values is None:
+        k_values = [1, 5, 10]
+
+    # Build dynamic header based on retriever type
+    retriever_display = retriever_name.upper() if retriever_name == 'bm25' else f"Embedding ({embedding_model})"
+    
+    # Get config name from first row
+    config_name = results_df['config_name'].iloc[0] if 'config_name' in results_df.columns else 'unknown'
+
+    lines = []
+    lines.append("\n" + "=" * 100)
+    lines.append(f"{retriever_display} BENCHMARK RESULTS - {config_name.upper()}")
+    lines.append("=" * 100)
+
+    # Header
+    header = f"{'Category':<20}"
+    for k in k_values:
+        header += f" MRR@{k:<2} "
+        header += f" NDCG@{k:<2} "
+        header += f" Recall@{k:<2} "
+    lines.append(header)
+    lines.append("-" * 100)
+
+    # Rows for each category
+    for _, row in results_df.iterrows():
+        line = f"{row['category']:<20}"
+        for k in k_values:
+            mrr_key = f'mrr@{k}'
+            ndcg_key = f'ndcg@{k}'
+            recall_key = f'recall@{k}'
+            
+            if mrr_key in row:
+                line += f" {row[mrr_key]:.4f} "
+            else:
+                line += " ------ "
+            if ndcg_key in row:
+                line += f" {row[ndcg_key]:.4f} "
+            else:
+                line += " ------ "
+            if recall_key in row:
+                line += f" {row[recall_key]:.4f} "
+            else:
+                line += " ------ "
+        lines.append(line)
+
+    lines.append("\n" + "=" * 100)
+    lines.append("Legend: MRR = Mean Reciprocal Rank, NDCG = Normalized Discounted Cumulative Gain")
+
+    return "\n".join(lines)
 
 def format_results_table_by_division(
     results_df: pd.DataFrame,

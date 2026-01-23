@@ -22,7 +22,7 @@ def get_command_arguments():
         '--benchamark-path',
         type=str,
         default="nasa-impact/nasa-science-code-benchmark-v0.1.1",
-        required=True,
+        required=False,
         help='Path to the benchmark directory containing code repositories'
     )
     parser.add_argument(
@@ -66,6 +66,12 @@ def get_command_arguments():
         '--by-query-type',
         action='store_true',
         help='Run query-type-specific evaluation'
+    )
+    parser.add_argument(
+        '--batch-size',
+        type=int,
+        default=16,
+        help='Batch size for embedding encoding'
     )
 
     return parser.parse_args()
@@ -298,7 +304,8 @@ def precompute_retrievers(
     corpus: Any,
     queries: Any,
     retriever_names: List[str],
-    embedding_model: str
+    embedding_model: str,
+    batch_size: int = 16
 ) -> Dict[str, Any]:
     retrievers = {}
 
@@ -306,7 +313,7 @@ def precompute_retrievers(
         if retriever_name == 'bm25':
             retriever = BM25Retriever()
         elif retriever_name == 'embedding':
-            retriever = EmbeddingRetriever(model_name=embedding_model)
+            retriever = EmbeddingRetriever(model_name=embedding_model, batch_size=batch_size)
         else:
             raise ValueError(f"Unknown retriever: {retriever_name}")
 
@@ -324,7 +331,11 @@ def main():
     corpus, queries = get_benchmark_dataset(args.benchamark_path)
 
     # Index corpus once per retriever
-    retrievers = precompute_retrievers(corpus, queries, args.retrievers, args.embedding_model)
+    retrievers = precompute_retrievers(corpus, 
+                                       queries, 
+                                       args.retrievers, 
+                                       args.embedding_model, 
+                                       batch_size=args.batch_size)
     
     k_values = [int(k) for k in args.ks]
     queries_df = queries.to_pandas()

@@ -6,13 +6,14 @@ import numpy as np
 from typing import Dict, List, Tuple
 from sentence_transformers import SentenceTransformer
 from sklearn.metrics.pairwise import cosine_similarity
+import torch
 from .base_retriever import BaseRetriever
 
 
 class EmbeddingRetriever(BaseRetriever):
     """Dense embedding-based retrieval using sentence transformers."""
 
-    def __init__(self, model_name: str = 'nasa-impact/indus-sde-st-v0.2', use_multi_gpu: bool = True):
+    def __init__(self, model_name: str = 'nasa-impact/indus-sde-st-v0.2', use_multi_gpu: bool = True, batch_size: int = 16):
         """
         Initialize embedding retriever.
 
@@ -20,11 +21,22 @@ class EmbeddingRetriever(BaseRetriever):
             model_name: Name of sentence-transformers model to use
         """
         print(f"Loading embedding model: {model_name}")
-        self.model = SentenceTransformer(model_name, token=os.getenv("HUGGINGFACE_TOKEN"))
+
+        self.model = SentenceTransformer(
+            model_name, 
+            token=os.getenv("HUGGINGFACE_TOKEN"), 
+            trust_remote_code=True,
+            model_kwargs={
+                'torch_dtype': torch.float16,
+                # 'device_map': 'cuda',  # or 'cuda:0' for specific GPU
+                # 'low_cpu_mem_usage': True
+            }
+        )
         self.corpus_ids = None
         self.corpus_embeddings = None
         self.query_embeddings = None
         self.use_multi_gpu = use_multi_gpu
+        self.batch_size = batch_size
 
     def index(self, corpus_df: pd.DataFrame, text_column: str = 'text') -> None:
         """
@@ -45,7 +57,7 @@ class EmbeddingRetriever(BaseRetriever):
             self.corpus_embeddings = self.model.encode_multi_process(
                 texts,
                 pool=pool,
-                batch_size=4,  # Adjust based on GPU memory
+                batch_size=self.batch_size,  # Adjust based on GPU memory
                 show_progress_bar=True,
                 chunk_size=1000  # Auto-calculate
             )
@@ -80,7 +92,7 @@ class EmbeddingRetriever(BaseRetriever):
             self.query_embeddings = self.model.encode_multi_process(
                 query_texts,
                 pool=pool,
-                batch_size=4,
+                batch_size=self.batch_size,
                 show_progress_bar=True,
                 chunk_size=1000
             )

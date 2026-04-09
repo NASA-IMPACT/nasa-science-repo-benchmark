@@ -25,7 +25,7 @@ def main():
         '--retrievers',
         nargs='+',
         default=['bm25'],
-        help='Retrieval methods to test (bm25, embedding). Default: bm25 only.'
+        help='Retrieval methods to test (bm25, embedding, hybrid-rrf, hybrid-rerank). Default: bm25 only.'
     )
     parser.add_argument(
         '--embedding-model',
@@ -72,9 +72,14 @@ def main():
             if retriever_name == 'bm25':
                 output_filename = 'bm25_benchmark_results_by_division.csv'
             elif retriever_name == 'embedding':
-                # Use model name as suffix (sanitize for filesystem)
                 model_suffix = args.embedding_model.replace('/', '-').replace('\\', '-')
                 output_filename = f'embedding_{model_suffix}_benchmark_results_by_division.csv'
+            elif retriever_name == 'hybrid-rrf':
+                model_suffix = args.embedding_model.replace('/', '-').replace('\\', '-')
+                output_filename = f'hybrid-rrf_{model_suffix}_benchmark_results_by_division.csv'
+            elif retriever_name == 'hybrid-rerank':
+                model_suffix = args.embedding_model.replace('/', '-').replace('\\', '-')
+                output_filename = f'hybrid-rerank_{model_suffix}_benchmark_results_by_division.csv'
             else:
                 output_filename = f'{retriever_name}_benchmark_results_by_division.csv'
 

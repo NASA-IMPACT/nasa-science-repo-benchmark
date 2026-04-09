@@ -4,7 +4,7 @@ import pandas as pd
 from typing import List, Dict
 from .data_loader import load_benchmark_corpus, load_parent_corpus, enrich_corpus, load_queries, load_qrels
 from .view_generator import ViewGenerator
-from .retrievers import BM25Retriever, EmbeddingRetriever
+from .retrievers import BM25Retriever, EmbeddingRetriever, HybridRRFRetriever, HybridRerankerRetriever
 from .metrics import evaluate_retrieval
 
 
@@ -81,6 +81,10 @@ def run_benchmark(
                 retriever = BM25Retriever()
             elif retriever_name == 'embedding':
                 retriever = EmbeddingRetriever(model_name=embedding_model)
+            elif retriever_name == 'hybrid-rrf':
+                retriever = HybridRRFRetriever(model_name=embedding_model)
+            elif retriever_name == 'hybrid-rerank':
+                retriever = HybridRerankerRetriever(model_name=embedding_model)
             else:
                 print(f"Unknown retriever: {retriever_name}, skipping...")
                 continue
@@ -242,6 +246,10 @@ def run_benchmark_by_division(
             retriever = BM25Retriever()
         elif retriever_name == 'embedding':
             retriever = EmbeddingRetriever(model_name=embedding_model)
+        elif retriever_name == 'hybrid-rrf':
+            retriever = HybridRRFRetriever(model_name=embedding_model)
+        elif retriever_name == 'hybrid-rerank':
+            retriever = HybridRerankerRetriever(model_name=embedding_model)
         else:
             raise ValueError(f"Unknown retriever: {retriever_name}")
 

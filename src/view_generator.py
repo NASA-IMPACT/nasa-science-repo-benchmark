@@ -13,7 +13,8 @@ class ViewGenerator:
         'readme_and_topics',
         'readme_and_additional_context',
         'full',
-        'enriched'  # Matches LocalSearchTool's text creation
+        'enriched',  # Matches LocalSearchTool's text creation
+        'combined',  # Alias for enriched (paper terminology)
     ]
 
     def create_text_view(self, corpus_df: pd.DataFrame, view_name: str) -> pd.DataFrame:
@@ -47,7 +48,7 @@ class ViewGenerator:
             result['text'] = self._create_readme_and_context_view(corpus_df)
         elif view_name == 'full':
             result['text'] = self._create_full_view(corpus_df)
-        elif view_name == 'enriched':
+        elif view_name in ('enriched', 'combined'):
             result['text'] = self._create_enriched_view(corpus_df)
 
         # Remove rows with empty text
